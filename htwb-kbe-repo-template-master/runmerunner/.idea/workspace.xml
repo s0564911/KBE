@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="67b4cde7-d2d6-48bf-b3c6-cd864c88db90" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../songsWS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../songsWS/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../songsservlet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../songsservlet/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1ixNdnL3BwBzor0pfwMFXNO3eSV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="C:/Uni/44_Scala/Beleg1/ExerciseListsBeleg" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg1/ExerciseListsBelegDONE" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg1/ExerciseListsBelegPLAIN/ExerciseListsBelegPLAIN" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg2/Beleg2Aufgabe" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg3/Assignment3" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Uebung1_Muster" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/scala-naive-bayes-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../54_ContMan/Beleg1/AufgabeLogAnalyse" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67b4cde7-d2d6-48bf-b3c6-cd864c88db90" name="Default Changelist" comment="" />
+      <created>1602845372192</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602845372192</updated>
+      <workItem from="1602845374841" duration="181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2517" height="383" key="GridCell.Tab.0.bottom" timestamp="1602845557364">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="383" key="GridCell.Tab.0.bottom/-1056.1447.1536.840/-1050.-233.1050.1650/0.0.2560.1410@0.0.2560.1410" timestamp="1602845557364" />
+    <state width="2517" height="383" key="GridCell.Tab.0.center" timestamp="1602845557364">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="383" key="GridCell.Tab.0.center/-1056.1447.1536.840/-1050.-233.1050.1650/0.0.2560.1410@0.0.2560.1410" timestamp="1602845557364" />
+    <state width="2517" height="383" key="GridCell.Tab.0.left" timestamp="1602845557364">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="383" key="GridCell.Tab.0.left/-1056.1447.1536.840/-1050.-233.1050.1650/0.0.2560.1410@0.0.2560.1410" timestamp="1602845557364" />
+    <state width="2517" height="383" key="GridCell.Tab.0.right" timestamp="1602845557364">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="383" key="GridCell.Tab.0.right/-1056.1447.1536.840/-1050.-233.1050.1650/0.0.2560.1410@0.0.2560.1410" timestamp="1602845557364" />
+  </component>
+</project>

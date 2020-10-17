@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="songsWS" />
+        <module name="runmerunner" />
+        <module name="songsservlet" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="modules" target="11" />
+      <module name="runmerunner" target="11" />
+      <module name="songsservlet" target="11" />
+      <module name="songsWS" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
