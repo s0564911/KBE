@@ -2,8 +2,6 @@ package htwb.ai;
 
 public class TestClass {
 
-    // ToDo: JUnit dis in 'test.java.htwb.ai.RunMeTest'
-
     public void testWithoutRM() {}
     void testNoRM() {}
     @RunMe

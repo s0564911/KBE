@@ -2,7 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae9dd6f-7d72-47fd-a3b2-8e69043f550b" name="Default Changelist" comment="Beleg1 without UnitTests&#10;&#10;Signed-off-by: Paul &lt;s0564911@htw-berlin.de&gt;">
-      <change afterPath="$PROJECT_DIR$/runmerunner/src/main/java/htwb/ai/RunMe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_nodep_3_2_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_easymock_easymock_3_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_27_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_10_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_api_easymock_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_api_support_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_core_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_module_junit4_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_module_junit4_common_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_reflect_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/TestClassPrivateConstructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/runmerunner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/runmerunner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/main/java/htwb/ai/RunMeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/src/main/java/htwb/ai/RunMeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/main/java/htwb/ai/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/RunMeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/RunMeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/classes/htwb/ai/RunMeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/classes/htwb/ai/RunMeMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/classes/htwb/ai/TestClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/runmerunner-KBE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/runmerunner-KBE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-27-39_746.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-29-21_483.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-31-04_093.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-32-27_756.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-40-35_086.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-51-49_601.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T15-59-07_960.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T16-01-04_926.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T16-06-43_936.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T16-11-21_189.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/surefire-reports/2020-10-17T16-16-30_244.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/target/test-classes/htwb/ai/RunMeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/runmerunner/target/test-classes/htwb/ai/RunMeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +64,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -45,16 +88,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager">
-    <configuration name="RunMeMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="htwb.ai.RunMeMain" />
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="htwb.ai" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.RunMeTest.areMethodsInvoked">
+    <configuration name="RunMeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="runmerunner" />
       <extension name="coverage">
         <pattern>
@@ -62,13 +111,84 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="htwb.ai" />
+      <option name="MAIN_CLASS_NAME" value="htwb.ai.RunMeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMeTest.areMethodsInvoked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="runmerunner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="htwb.ai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="htwb.ai" />
+      <option name="MAIN_CLASS_NAME" value="htwb.ai.RunMeTest" />
+      <option name="METHOD_NAME" value="areMethodsInvoked" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMeTest.couldNotAccessConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="runmerunner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="htwb.ai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="htwb.ai" />
+      <option name="MAIN_CLASS_NAME" value="htwb.ai.RunMeTest" />
+      <option name="METHOD_NAME" value="couldNotAccessConstructor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMeTest.couldNotFindClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="runmerunner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="htwb.ai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="htwb.ai" />
+      <option name="MAIN_CLASS_NAME" value="htwb.ai.RunMeTest" />
+      <option name="METHOD_NAME" value="couldNotFindClass" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMeTest.couldNotInvokeConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="runmerunner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="htwb.ai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="htwb.ai" />
+      <option name="MAIN_CLASS_NAME" value="htwb.ai.RunMeTest" />
+      <option name="METHOD_NAME" value="couldNotInvokeConstructor" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunMeMain" />
+        <item itemvalue="JUnit.RunMeTest.areMethodsInvoked" />
+        <item itemvalue="JUnit.RunMeTest" />
+        <item itemvalue="JUnit.RunMeTest.couldNotFindClass" />
+        <item itemvalue="JUnit.RunMeTest.couldNotInvokeConstructor" />
+        <item itemvalue="JUnit.RunMeTest.couldNotAccessConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -82,7 +202,7 @@
         <entry key="C:/Uni/44_Scala/Beleg3/Assignment3" value="PREVIEW" />
         <entry key="C:/Uni/44_Scala/Uebung1_Muster" value="PREVIEW" />
         <entry key="C:/Uni/44_Scala/scala-naive-bayes-master" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../../../54_ContMan/Beleg1/AufgabeLogAnalyse" value="PREVIEW" />
+        <entry key="$USER_HOME$/54_ContMan/Beleg1/AufgabeLogAnalyse" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -102,6 +222,8 @@
       <workItem from="1602934563940" duration="781000" />
       <workItem from="1602935417324" duration="187000" />
       <workItem from="1602935674601" duration="9889000" />
+      <workItem from="1602946429948" duration="82000" />
+      <workItem from="1603096994069" duration="12888000" />
     </task>
     <task id="LOCAL-00001" summary="Beleg1, UnitTests missing">
       <created>1602944207274</created>
@@ -117,6 +239,9 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
     <MESSAGE value="Beleg1, UnitTests missing" />
     <MESSAGE value="Beleg1 without UnitTests&#10;&#10;Signed-off-by: Paul &lt;s0564911@htw-berlin.de&gt;" />
     <option name="LAST_COMMIT_MESSAGE" value="Beleg1 without UnitTests&#10;&#10;Signed-off-by: Paul &lt;s0564911@htw-berlin.de&gt;" />
@@ -126,10 +251,18 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="872" y="363" key="#Notifications/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602944263644" />
-    <state x="872" y="363" key="#Project_Structure" timestamp="1602937862219">
+    <state x="872" y="363" key="#Project_Structure" timestamp="1603109835377">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="363" key="#Project_Structure/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602937862219" />
+    <state x="872" y="363" key="#Project_Structure/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603109835377" />
+    <state x="92" y="92" width="2376" height="1226" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1603102064417">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="92" y="92" width="2376" height="1226" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603102064417" />
+    <state x="1071" y="546" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603101660167">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1071" y="546" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603101660167" />
     <state x="-563" y="280" key="#xdebugger.evaluate" timestamp="1602942419282">
       <screen x="-1050" y="-233" width="1050" height="1650" />
     </state>
@@ -138,6 +271,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="640" y="57" key="CommitChangelistDialog2/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602945174775" />
+    <state width="416" height="646" key="DebuggerActiveHint" timestamp="1603104789209">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="416" height="646" key="DebuggerActiveHint/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603104789209" />
     <state x="1014" y="452" key="EnvironmentVariablesDialog" timestamp="1602935062849">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -146,38 +283,42 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1060" y="406" key="FileChooserDialogImpl/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602923040409" />
-    <state width="2517" height="417" key="GridCell.Tab.0.bottom" timestamp="1602944210142">
+    <state width="2517" height="420" key="GridCell.Tab.0.bottom" timestamp="1603110609995">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="417" key="GridCell.Tab.0.bottom/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602944210142" />
-    <state width="2517" height="417" key="GridCell.Tab.0.center" timestamp="1602944210142">
+    <state width="2517" height="420" key="GridCell.Tab.0.bottom/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603110609995" />
+    <state width="2517" height="420" key="GridCell.Tab.0.center" timestamp="1603110609994">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="417" key="GridCell.Tab.0.center/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602944210142" />
-    <state width="2517" height="417" key="GridCell.Tab.0.left" timestamp="1602944210142">
+    <state width="2517" height="420" key="GridCell.Tab.0.center/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603110609994" />
+    <state width="2517" height="420" key="GridCell.Tab.0.left" timestamp="1603110609994">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="417" key="GridCell.Tab.0.left/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602944210142" />
-    <state width="2517" height="417" key="GridCell.Tab.0.right" timestamp="1602944210142">
+    <state width="2517" height="420" key="GridCell.Tab.0.left/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603110609994" />
+    <state width="2517" height="420" key="GridCell.Tab.0.right" timestamp="1603110609995">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="417" key="GridCell.Tab.0.right/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602944210142" />
-    <state width="2517" height="474" key="GridCell.Tab.1.bottom" timestamp="1602942421394">
+    <state width="2517" height="420" key="GridCell.Tab.0.right/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603110609995" />
+    <state width="2517" height="474" key="GridCell.Tab.1.bottom" timestamp="1603109476095">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="474" key="GridCell.Tab.1.bottom/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602942421394" />
-    <state width="2517" height="474" key="GridCell.Tab.1.center" timestamp="1602942421394">
+    <state width="2517" height="474" key="GridCell.Tab.1.bottom/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603109476095" />
+    <state width="2517" height="474" key="GridCell.Tab.1.center" timestamp="1603109476095">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="474" key="GridCell.Tab.1.center/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602942421394" />
-    <state width="2517" height="474" key="GridCell.Tab.1.left" timestamp="1602942421393">
+    <state width="2517" height="474" key="GridCell.Tab.1.center/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603109476095" />
+    <state width="2517" height="474" key="GridCell.Tab.1.left" timestamp="1603109476095">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="474" key="GridCell.Tab.1.left/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602942421393" />
-    <state width="2517" height="474" key="GridCell.Tab.1.right" timestamp="1602942421394">
+    <state width="2517" height="474" key="GridCell.Tab.1.left/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603109476095" />
+    <state width="2517" height="474" key="GridCell.Tab.1.right" timestamp="1603109476095">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="474" key="GridCell.Tab.1.right/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602942421394" />
+    <state width="2517" height="474" key="GridCell.Tab.1.right/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603109476095" />
+    <state x="810" y="360" key="Maven.ArtifactSearchDialog" timestamp="1603107426108">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="810" y="360" key="Maven.ArtifactSearchDialog/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1603107426108" />
     <state x="205" y="112" key="MergeDialog" timestamp="1602945539855">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -190,14 +331,14 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="940" y="323" key="NewModule_or_Project.wizard/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602923043088" />
-    <state x="781" y="347" key="SettingsEditor" timestamp="1602937901689">
+    <state x="781" y="347" key="SettingsEditor" timestamp="1602946463054">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="781" y="347" key="SettingsEditor/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602937901689" />
-    <state x="1087" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602945404557">
+    <state x="781" y="347" key="SettingsEditor/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602946463054" />
+    <state x="1087" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602946506732">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1087" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602945404557" />
+    <state x="1087" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602946506732" />
     <state x="936" y="333" key="run.anything.popup" timestamp="1602942756964">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -206,5 +347,26 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/-1056.1447.1536.840/0.0.2560.1410/-1050.-233.1050.1650@0.0.2560.1410" timestamp="1602930237201" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/RunMeTest.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/RunMeTest.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/RunMeTest.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
