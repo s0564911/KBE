@@ -1,35 +1,12 @@
 package htwb.ai;
 
-import static org.easymock.EasyMock.expect;
-import static org.junit.Assert.assertEquals;
-import static org.powermock.api.easymock.PowerMock.expectNew;
-import static org.powermock.api.easymock.PowerMock.replay;
-import static org.powermock.api.easymock.PowerMock.verify;
+import org.junit.jupiter.api.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.powermock.api.easymock.annotation.Mock;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
-import static org.easymock.EasyMock.expect;
-import static org.junit.Assert.assertEquals;
-import static org.powermock.api.easymock.PowerMock.expectNew;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.powermock.api.easymock.annotation.Mock;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
-import java.io.*;
-//import org.junit.*;
-
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(RunMeMain.class)
 public class RunMeTest {
 
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -37,39 +14,36 @@ public class RunMeTest {
 
     String[] args = new String[1];
 
-    @Mock
-    private TestClass testClass;
-
-    private RunMeMain runMeMain;
-
-    @Before
+    @BeforeEach
     public void setUpStreams() {
         System.setErr(new PrintStream(errContent));
     }
 
-    @After
+    @AfterEach
     public void restoreStreams() {
         System.setErr(originalErr);
     }
 
     @Test
-    public void couldNotFindClass() {
+    public void couldNotFindClassTest() {
         args[0] = "blub";
         RunMeMain.main(args);
         String testString = "Error: Could not find class blub\r\n" +
                 "Usage: java -jar runmerunner-KBE.jar className\r\n";
         assertEquals(testString, errContent.toString());
     }
+
     @Test
-    public void couldNotInstantiateClass() {
+    public void couldNotInstantiateClassTest() {
         args[0] = "java.lang.Number";
         RunMeMain.main(args);
         String testString = "Error: Could not instantiate class java.lang.Number\r\n" +
                 "Usage: java -jar runmerunner-KBE.jar className\r\n";
         assertEquals(testString, errContent.toString());
     }
+
     @Test
-    public void couldNotFindConstructor() {
+    public void couldNotFindConstructorTest() {
         args[0] = "java.io.PrintStream";
         RunMeMain.main(args);
         String testString = "Error: Could not find constructor of class java.io.PrintStream\r\n" +
@@ -77,26 +51,14 @@ public class RunMeTest {
                 "Usage: java -jar runmerunner-KBE.jar className\r\n";
         assertEquals(testString, errContent.toString());
     }
+
     @Test
-    public void couldNotAccessConstructor() {
+    public void couldNotAccessConstructorTest() {
         args[0] = "htwb.ai.TestClassPrivateConstructor";
         RunMeMain.main(args);
         String testString = "Error: Could not access constructor of class htwb.ai.TestClassPrivateConstructor\r\n" +
                 "Error: Could not instantiate class htwb.ai.TestClassPrivateConstructor\r\n" +
                 "Usage: java -jar runmerunner-KBE.jar className\r\n";
         assertEquals(testString, errContent.toString());
-    }
-
-    // ToDo
-
-    @Test
-    public void areMethodsInvoked() throws Exception{
-        args[0] = "htwb.ai.TestClass";
-
-        runMeMain = new RunMeMain();
-
-        expectNew(TestClass.class).andReturn(testClass);
-
-//        Mockito.verify(testClass, Mockito.times(1)).findMe0();
     }
 }
