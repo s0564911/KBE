@@ -43,6 +43,13 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>5.2.0-M1</version>
 		</dependency>
+		<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-launcher</artifactId>
+    <version>1.4.2</version>
+    <scope>test</scope>
+</dependency>
+		
 	</dependencies>
 	<build>
 	   	<finalName>runmerunner-KBE</finalName>
@@ -74,6 +81,8 @@
 						<artifactId>junit-jupiter-engine</artifactId>
 						<version>5.2.0</version>
 					</dependency>
+				
+					
 				</dependencies>
 			</plugin>
 		</plugins>
