@@ -6,98 +6,92 @@ import java.util.ArrayList;
 import java.util.List;
 
 <span class="nc" id="L8">public class RunMeMain {</span>
-
-    public static Object instanze;
-
     public static void main(String[] args) {
-<span class="fc" id="L13">        String className = &quot;&quot;;</span>
+<span class="nc" id="L10">        String className = &quot;&quot;;</span>
         try {
-<span class="pc bpc" id="L15" title="1 of 2 branches missed.">            if (args.length == 0)</span>
-<span class="nc" id="L16">                throw new ClassNotFoundException();</span>
+<span class="nc bnc" id="L12" title="All 2 branches missed.">            if (args.length == 0)</span>
+<span class="nc" id="L13">                throw new ClassNotFoundException();</span>
 
-<span class="fc" id="L18">            List&lt;Method&gt; runMeNot = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L19">            List&lt;Method&gt; runMe = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L20">            List&lt;Method&gt; notInvocable = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L21">            List&lt;Method&gt; needsArguments = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L15">            List&lt;Method&gt; runMe = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L16">            List&lt;Method&gt; notInvocable = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L17">            List&lt;Method&gt; needsArguments = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L23">            className = args[0];</span>
+<span class="nc" id="L19">            className = args[0]; //&quot;htwb.ai.TestClass&quot;; //</span>
 
 
-<span class="fc" id="L26">            Class&lt;?&gt; clazz = Class.forName(className);</span>
-<span class="fc" id="L27">            Method[] declMethods = clazz.getDeclaredMethods();</span>
+<span class="nc" id="L22">            Class&lt;?&gt; clazz = Class.forName(className);</span>
+<span class="nc" id="L23">            Method[] declMethods = clazz.getDeclaredMethods();</span>
 
-            // entweder hier oder unten, hier wird bei nicht instanzierbaren Klassen direkt ein Error ausgeworfen
-<span class="nc" id="L30">            instanze = clazz.getDeclaredConstructor().newInstance();</span>
+            // ToDo: entweder hier oder unten, hier wird bei nicht instanzierbaren Klassen direkt ein Error ausgeworfen
+<span class="nc" id="L26">            Object instanze = clazz.getDeclaredConstructor().newInstance();</span>
 
-<span class="nc" id="L32">            System.out.println(&quot;Analyzed class '&quot; + clazz.getCanonicalName() + &quot;':&quot;);</span>
+<span class="nc" id="L28">            System.out.println(&quot;Analyzed class '&quot; + clazz.getCanonicalName() + &quot;':&quot;);</span>
 
-<span class="nc bnc" id="L34" title="All 2 branches missed.">            for (Method m : declMethods) {</span>
-<span class="nc bnc" id="L35" title="All 2 branches missed.">                if (!m.isAnnotationPresent(RunMe.class)) {</span>
-<span class="nc" id="L36">                    runMeNot.add(m);</span>
+<span class="nc" id="L30">            System.out.println(&quot;Methods without @RunMe: &quot;);</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">            for (Method m : declMethods) {</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">                if (!m.isAnnotationPresent(RunMe.class)) {</span>
+<span class="nc" id="L33">                    System.out.println(&quot;  &quot; + m.getName());</span>
                 }
             }
 
-<span class="nc bnc" id="L40" title="All 2 branches missed.">            for (Method m : declMethods) {</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">                if (m.isAnnotationPresent(RunMe.class)) {</span>
-<span class="nc" id="L42">                    runMe.add(m);</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">            for (Method m : declMethods) {</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">                if (m.isAnnotationPresent(RunMe.class)) {</span>
+<span class="nc" id="L39">                    runMe.add(m);</span>
                 }
             }
 
-<span class="nc bnc" id="L46" title="All 2 branches missed.">            if (runMeNot.size() &gt; 0) {</span>
-<span class="nc" id="L47">                System.out.println(&quot;Methods without @RunMe: &quot;);</span>
-<span class="nc bnc" id="L48" title="All 2 branches missed.">                for (Method m : runMeNot)</span>
-<span class="nc" id="L49">                    System.out.println(&quot;  &quot; + m.getName());</span>
-            } else {
-<span class="nc" id="L51">                System.out.println(&quot;No methods without @RunMe&quot;);</span>
-            }
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            if (runMe.size() &gt; 0) {</span>
 
-<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (runMe.size() &gt; 0) {</span>
-                // hier wuerden bei Klassen wie java.lang.Number noch Methoden ohne @RunMe angezeigt
+                // ToDo: oder hier werden bei Klassen wie java.lang.Number noch Methoden ohne @RunMe angezeigt
                 //Object instanze = clazz.getDeclaredConstructor().newInstance();
-<span class="nc" id="L57">                System.out.println(&quot;Methods with @RunMe: &quot;);</span>
-<span class="nc bnc" id="L58" title="All 2 branches missed.">                for (Method m : runMe) {</span>
+<span class="nc" id="L47">                System.out.println(&quot;Methods with @RunMe: &quot;);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">                for (Method m : runMe) {</span>
                     try {
-<span class="nc" id="L60">                        m.invoke(instanze);</span>
-<span class="nc" id="L61">                        System.out.println(&quot;  &quot; + m.getName());</span>
-<span class="nc" id="L62">                    } catch (InvocationTargetException | IllegalAccessException e) {</span>
-<span class="nc" id="L63">                        notInvocable.add(m);</span>
-<span class="nc" id="L64">                    } catch (IllegalArgumentException e) {</span>
-<span class="nc" id="L65">                        needsArguments.add(m);</span>
-<span class="nc" id="L66">                    }</span>
-<span class="nc" id="L67">                }</span>
+<span class="nc" id="L50">                        m.invoke(instanze);</span>
+<span class="nc" id="L51">                        System.out.println(&quot;  &quot; + m.getName());</span>
+<span class="nc" id="L52">                    } catch (IllegalAccessException e) {</span>
+<span class="nc" id="L53">                        notInvocable.add(m);</span>
+<span class="nc" id="L54">                    } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L55">                        needsArguments.add(m);</span>
+<span class="nc" id="L56">                    }</span>
+<span class="nc" id="L57">                }</span>
             } else {
-<span class="nc" id="L69">                System.out.println(&quot;No methods with @RunMe&quot;);</span>
+<span class="nc" id="L59">                System.out.println(&quot;No methods with @RunMe&quot;);</span>
             }
 
-<span class="nc bnc" id="L72" title="All 2 branches missed.">            if (notInvocable.size() &gt; 0) {</span>
-<span class="nc" id="L73">                System.out.println(&quot;not invocable:&quot;);</span>
-<span class="nc bnc" id="L74" title="All 2 branches missed.">                for (Method m : notInvocable) {</span>
-<span class="nc" id="L75">                    System.out.println(&quot;  &quot; + m.getName() + &quot;: IllegalAccessException&quot;);</span>
-<span class="nc" id="L76">                }</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">            if (notInvocable.size() &gt; 0) {</span>
+<span class="nc" id="L63">                System.out.println(&quot;not invocable:&quot;);</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                for (Method m : notInvocable) {</span>
+<span class="nc" id="L65">                    System.out.println(&quot;  &quot; + m.getName() + &quot;: IllegalAccessException&quot;);</span>
+<span class="nc" id="L66">                }</span>
             }
 
-<span class="nc bnc" id="L79" title="All 2 branches missed.">            if (needsArguments.size() &gt; 0) {</span>
-<span class="nc" id="L80">                System.out.println(&quot;needing arguments to be run:&quot;);</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">                for (Method m : needsArguments) {</span>
-<span class="nc" id="L82">                    System.out.print(&quot;  &quot; + m.getName());</span>
-<span class="nc" id="L83">                }</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">            if (needsArguments.size() &gt; 0) {</span>
+<span class="nc" id="L70">                System.out.println(&quot;needing arguments to be run:&quot;);</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">                for (Method m : needsArguments) {</span>
+<span class="nc" id="L72">                    System.out.print(&quot;  &quot; + m.getName());</span>
+<span class="nc" id="L73">                }</span>
             }
 
-<span class="fc" id="L86">        } catch (ClassNotFoundException e) {</span>
-<span class="fc" id="L87">            System.err.println(&quot;Error: Could not find class &quot; + className);</span>
-<span class="fc" id="L88">            System.err.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
-<span class="fc" id="L89">        } catch (InstantiationException e) {</span>
-<span class="fc" id="L90">            System.err.println(&quot;Error: Could not instantiate class &quot; + className);</span>
-<span class="fc" id="L91">            System.err.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
-<span class="fc" id="L92">        } catch (NoSuchMethodException e) {</span>
-<span class="fc" id="L93">            System.err.println(&quot;Error: Could not find constructor of class &quot; + className);</span>
-<span class="fc" id="L94">            System.err.println(&quot;Error: Could not instantiate class &quot; + className);</span>
-<span class="fc" id="L95">            System.err.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
-<span class="fc" id="L96">        } catch (InvocationTargetException | IllegalAccessException e) {</span>
-<span class="fc" id="L97">            System.err.println(&quot;Error: Could not access constructor of class &quot; + className);</span>
-<span class="fc" id="L98">            System.err.println(&quot;Error: Could not instantiate class &quot; + className);</span>
-<span class="fc" id="L99">            System.err.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
-<span class="pc" id="L100">        }</span>
-<span class="fc" id="L101">    }</span>
+<span class="nc" id="L76">        } catch (ClassNotFoundException e) {</span>
+<span class="nc" id="L77">            System.out.println(&quot;Error: Could not find class &quot; + className);</span>
+<span class="nc" id="L78">            System.out.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
+<span class="nc" id="L79">        } catch (InstantiationException e) {</span>
+<span class="nc" id="L80">            System.out.println(&quot;Error: Could not instantiate class &quot; + className);</span>
+<span class="nc" id="L81">            System.out.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
+<span class="nc" id="L82">        } catch (NoSuchMethodException e) {</span>
+<span class="nc" id="L83">            System.out.println(&quot;Error: Could not find constructor of class &quot; + className);</span>
+<span class="nc" id="L84">            System.out.println(&quot;Error: Could not instantiate class &quot; + className);</span>
+<span class="nc" id="L85">            System.out.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
+<span class="nc" id="L86">        } catch (IllegalAccessException e) {</span>
+<span class="nc" id="L87">            System.out.println(&quot;Error: Could not access constructor &quot; + className);</span>
+<span class="nc" id="L88">            System.out.println(&quot;Error: Could not instantiate class &quot; + className);</span>
+<span class="nc" id="L89">            System.out.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
+<span class="nc" id="L90">        } catch (InvocationTargetException e) {</span>
+<span class="nc" id="L91">            System.out.println(&quot;Error: Could not invoke constructor of class &quot; + className);</span>
+<span class="nc" id="L92">            System.out.println(&quot;Error: Could not instantiate class &quot; + className);</span>
+<span class="nc" id="L93">            System.out.println(&quot;Usage: java -jar runmerunner-KBE.jar className&quot;);</span>
+<span class="nc" id="L94">        }</span>
+<span class="nc" id="L95">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

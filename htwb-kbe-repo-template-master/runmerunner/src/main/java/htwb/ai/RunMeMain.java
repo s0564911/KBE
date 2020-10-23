@@ -27,7 +27,8 @@ public class RunMeMain {
             Method[] declMethods = clazz.getDeclaredMethods();
 
             // entweder hier oder unten, hier wird bei nicht instanzierbaren Klassen direkt ein Error ausgeworfen
-            instanze = clazz.getDeclaredConstructor().newInstance();
+            if (instanze == null)
+                instanze = clazz.getDeclaredConstructor().newInstance();
 
             System.out.println("Analyzed class '" + clazz.getCanonicalName() + "':");
 
@@ -97,6 +98,14 @@ public class RunMeMain {
             System.err.println("Error: Could not access constructor of class " + className);
             System.err.println("Error: Could not instantiate class " + className);
             System.err.println("Usage: java -jar runmerunner-KBE.jar className");
+//        } catch (InvocationTargetException e) {
+//            System.out.println("Error: Could not invoke constructor of class " + className);
+//            System.out.println("Error: Could not instantiate class " + className);
+//            System.out.println("Usage: java -jar runmerunner-KBE.jar className");
         }
+    }
+
+    protected static Object mockThis() {
+        return instanze;
     }
 }

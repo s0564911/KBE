@@ -4,14 +4,12 @@ public class TestClass {
 
     public void testWithoutRM() {}
     void testNoRM() {}
-
     @RunMe
     public void findMe0() {}
     @RunMe
     void findMe1(String s) {}
-    @RunMe static void findMe2() {}
+    @RunMe
+    static void findMe2() {}
     @RunMe
     private void findMe3() {}
-    @RunMe
-    public String findMe4() {return "hello";}
 }
