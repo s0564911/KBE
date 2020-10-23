@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RunMeMain {
-
-    public static Object instanze;
-
     public static void main(String[] args) {
         String className = "";
         try {
@@ -27,7 +24,7 @@ public class RunMeMain {
             Method[] declMethods = clazz.getDeclaredMethods();
 
             // entweder hier oder unten, hier wird bei nicht instanzierbaren Klassen direkt ein Error ausgeworfen
-            instanze = clazz.getDeclaredConstructor().newInstance();
+            Object instanze = clazz.getDeclaredConstructor().newInstance();
 
             System.out.println("Analyzed class '" + clazz.getCanonicalName() + "':");
 
