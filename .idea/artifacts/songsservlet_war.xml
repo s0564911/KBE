@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="songsservlet:war">
+    <output-path>$PROJECT_DIR$/songsservlet/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>songsservlet</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="songsservlet-KBE.war">
+      <element id="artifact" artifact-name="songsservlet:war exploded" />
+    </root>
+  </artifact>
+</component>
