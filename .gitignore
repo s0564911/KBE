@@ -4,11 +4,9 @@
 **/META-INF/
 
 ### general ##
-*.github
 *~
 *.swp
 *.com
-*.class
 *.dll
 *.exe
 *.o
@@ -28,7 +26,9 @@ Icon?
 Thumbs.db
 
 ### IntelliJ IDEA ###
-**/.idea/**
+.idea/
+/.idea/
+*/.idea/**
 *.idea
 *.iws
 *.iml
