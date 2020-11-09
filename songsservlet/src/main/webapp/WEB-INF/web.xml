@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>songsservlet-KBE</servlet-name>
+        <servlet-class>htwb.ai.KBE.SongServlet</servlet-class>
+    </servlet>
+
+    <!--  DIE URL AN DAS SERVLET, WELCHES IN EINEM TOMCAT_SERVER LAEUFT IST:
+          http://localhost:8080/echoServlet/echo
+          echoServlet ist die Bezeichnung der App,
+          echoServlet/echo -> Pfad welcher auf htwb.ai.teames.EchoServlet abgebildet wird
+          echoServlet.war wird von uns gebaut, ins webapp-Verzeichnis von Tomcat kopiert
+          von Tomcat depoyed
+
+     -->
+    <servlet-mapping>
+        <servlet-name>songsservlet-KBE</servlet-name>
+        <url-pattern>/songs</url-pattern>
+    </servlet-mapping>
 </web-app>

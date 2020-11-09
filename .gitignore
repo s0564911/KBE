@@ -1,0 +1,41 @@
+### target ###
+/target/
+*/target/**
+**/META-INF/
+
+### general ##
+*.github
+*~
+*.swp
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.log
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+### IntelliJ IDEA ###
+**/.idea/**
+*.idea
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+*.classpath
+*.project
+*.settings
+*.metadata
