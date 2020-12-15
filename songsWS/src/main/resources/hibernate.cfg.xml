@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.url">jdbc:postgresql://ec2-54-211-238-131.compute-1.amazonaws.com:5432/d76lkavtcpn5if</property>
+        <property name="connection.username">imozvxjfxsmluk</property>
+        <property name="connection.password">5c1d80929fc678ecad7806373be3c24d4c7447ba76cd9b9cfdfa8d5a97f9949e</property>
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+
+        <mapping class="de.htwb.ai.kbe.model.Song" />
+
+    </session-factory>
+</hibernate-configuration>
+
+<!-- Configuration for fast tests -->

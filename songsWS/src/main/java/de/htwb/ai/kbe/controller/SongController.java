@@ -2,35 +2,34 @@ package de.htwb.ai.kbe.controller;
 
 import java.util.List;
 
-import de.htwb.ai.kbe.dao.ISongDAO;
 import de.htwb.ai.kbe.service.ISongService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import de.htwb.ai.kbe.model.Song;
 
+import javax.persistence.EntityNotFoundException;
+
 @RestController
 @RequestMapping(value = "/songs")
 public class SongController {
 
-    @Autowired
-    private ISongService songService;
+    private final ISongService songService;
 
-//    @Autowired
-//    private ISongDAO songDAO;
+    public SongController(ISongService songService) {
+        this.songService = songService;
+    }
 
     //GET http://localhost:8080/songsWS-KBE/rest/songs
-    @RequestMapping
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Song>> getAllSongs() {
-//        HttpHeaders headers = new HttpHeaders();
         List<Song> songs = songService.getAllSongs();
 
         if (songs == null) {
-            return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-//        headers.add("Some Information");
         return new ResponseEntity<>(songs, HttpStatus.OK);
     }
 
@@ -39,50 +38,74 @@ public class SongController {
     public ResponseEntity<Song> getSong(@PathVariable("id") int id) {
         Song song = songService.getSongById(id);
         if (song == null) {
-            return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(song, HttpStatus.OK);
     }
-
-    // ToDo: response method implementation, tests, users - rest down is crap - also smh file encoding again
 
     //POST http://localhost:8080/songsWS-KBE/rest/songs
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public ResponseEntity<Song> addSong(@PathVariable("title") String title,
-                                        @PathVariable("artist") String artist) {
-        Song song = Song.builder().withTitle(title).withArtist(artist).build();
-        songService.addSong(song);
-        if (song == null) {
-            return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Song> addSong(@RequestBody Song s) {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", "/rest/songs/");
+        Song song = Song.builder()
+                .withTitle(s.getTitle())
+                .withArtist(s.getArtist())
+                .withLabel(s.getLabel())
+                .withReleased(s.getReleased()).build();
+
+        try {
+            songService.addSong(song);
+        } catch (Exception e) {
+            return new ResponseEntity<>(song, HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(song, HttpStatus.OK);
+
+        return new ResponseEntity<>(song, headers, HttpStatus.CREATED);
     }
 
-    //PUT http://localhost:8080/songsWS-KBE/rest/songs/1
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Song> addSong(@PathVariable("id") int id,
-                                        @PathVariable("title") String title,
-                                        @PathVariable("artist") String artist) {
-        Song song = Song.builder().withTitle(title).withArtist(artist).build();
+    //PUT http://localhost:8080/songsWS-KBE/rest/songs/10
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Song> updateSong(@PathVariable("id") int id, @RequestBody Song s) {
+
+
+        Song song = Song.builder()
+                .withTitle(s.getTitle())
+                .withArtist(s.getArtist())
+                .withLabel(s.getLabel())
+                .withReleased(s.getReleased()).build();
+
+
+        if (songService.getSongById(id) == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        else if (song.getTitle() == null || s.getId() != id)
+            return new ResponseEntity<>(song, HttpStatus.BAD_REQUEST);
+
         songService.updateSong(song);
-        if (song == null) {
-            return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
-        }
-        return new ResponseEntity<>(song, HttpStatus.OK);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //DELETE http://localhost:8080/songsWS-KBE/rest/songs/1
+    //DELETE http://localhost:8080/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteSong(@PathVariable("id") int id) {
-        songService.deleteSong(id);
+    public ResponseEntity<Song> deleteSong(@PathVariable("id") int id) {
+        try {
+            songService.deleteSong(id);
+        } catch (EntityNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // see if elephantSQL or implementation failed
-    // Status OK -> elephantSQL
-    // Status 404 -> implementation
+    /*
+     * see if elephantSQL or implementation failed
+     *
+     * I_AM_A_TEAPOT -> elephantSQL
+     * NOT_FOUND -> implementation
+     */
     @RequestMapping(value = "/test")
     public ResponseEntity<Song> doTest() {
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
     }
 
 

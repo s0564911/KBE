@@ -28,7 +28,7 @@ public class Song {
     private String label;
 
     @Column(name="released")
-    private String released;
+    private int released;
 
     public Song() {}
 
@@ -47,7 +47,6 @@ public class Song {
     public void setId(int id) {
         this.id = id;
     }
-
 
     public String getTitle() {
         return title;
@@ -73,9 +72,9 @@ public class Song {
         this.label = label;
     }
 
-    public String getReleased() { return released; }
+    public int getReleased() { return released; }
 
-    public void setReleased(String released) {
+    public void setReleased(int released) {
         this.released = released;
     }
 
@@ -85,11 +84,10 @@ public class Song {
 
     public static final class Builder {
         private int id;
-        private String songId;
         private String title;
         private String artist;
         private String label;
-        private String released;
+        private int released;
 
         private Builder() {
         }
@@ -114,7 +112,7 @@ public class Song {
             return this;
         }
 
-        public Builder withReleased(String released) {
+        public Builder withReleased(int released) {
             this.released = released;
             return this;
         }

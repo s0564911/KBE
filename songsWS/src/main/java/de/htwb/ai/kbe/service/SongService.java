@@ -2,7 +2,6 @@ package de.htwb.ai.kbe.service;
 
 import de.htwb.ai.kbe.dao.ISongDAO;
 import de.htwb.ai.kbe.model.Song;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,10 +10,11 @@ import java.util.List;
 @Service//("songService")
 public class SongService implements ISongService{
 
-    // ToDo - maybe skip service for Direct Injection? try calling
+    private final ISongDAO songDAO;
 
-    @Autowired
-    private ISongDAO songDAO;
+    public SongService(ISongDAO songDAO) {
+        this.songDAO = songDAO;
+    }
 
     @Override
     @Transactional
