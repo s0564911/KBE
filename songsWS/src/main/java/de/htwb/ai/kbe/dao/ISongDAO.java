@@ -2,10 +2,9 @@ package de.htwb.ai.kbe.dao;
 
 import de.htwb.ai.kbe.model.Song;
 
-//import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
-public interface ISongDAO { // extends JpaRepository {
+public interface ISongDAO {
 
     List<Song> getAllSongs();
     Song getSongById(int id);

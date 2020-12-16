@@ -22,7 +22,7 @@ public class SongController {
         this.songService = songService;
     }
 
-    //GET http://localhost:8080/songsWS-KBE/rest/songs
+    //GET https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Song>> getAllSongs() {
         List<Song> songs = songService.getAllSongs();
@@ -33,7 +33,7 @@ public class SongController {
         return new ResponseEntity<>(songs, HttpStatus.OK);
     }
 
-    //GET http://localhost:8080/songsWS-KBE/rest/songs/1
+    //GET https://localhost:8443/songsWS-KBE/rest/songs/1
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<Song> getSong(@PathVariable("id") int id) {
         Song song = songService.getSongById(id);
@@ -43,7 +43,7 @@ public class SongController {
         return new ResponseEntity<>(song, HttpStatus.OK);
     }
 
-    //POST http://localhost:8080/songsWS-KBE/rest/songs
+    //POST https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
     public ResponseEntity<Song> addSong(@RequestBody Song s) {
 
@@ -64,7 +64,7 @@ public class SongController {
         return new ResponseEntity<>(song, headers, HttpStatus.CREATED);
     }
 
-    //PUT http://localhost:8080/songsWS-KBE/rest/songs/10
+    //PUT https://localhost:8443/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
     public ResponseEntity<Song> updateSong(@PathVariable("id") int id, @RequestBody Song s) {
 
@@ -86,7 +86,7 @@ public class SongController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //DELETE http://localhost:8080/songsWS-KBE/rest/songs/10
+    //DELETE https://localhost:8443/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Song> deleteSong(@PathVariable("id") int id) {
         try {
@@ -96,18 +96,6 @@ public class SongController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
-    /*
-     * see if elephantSQL or implementation failed
-     *
-     * I_AM_A_TEAPOT -> elephantSQL
-     * NOT_FOUND -> implementation
-     */
-    @RequestMapping(value = "/test")
-    public ResponseEntity<Song> doTest() {
-        return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
-    }
-
 
 }
 

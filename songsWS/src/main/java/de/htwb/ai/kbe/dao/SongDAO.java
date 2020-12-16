@@ -13,7 +13,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-@Repository//("songDAO")
+@Repository("songDAO")
 public class SongDAO implements ISongDAO {
 
 //    private static final Logger logger = LoggerFactory.getLogger(SongDAO.class);
@@ -42,8 +42,8 @@ public class SongDAO implements ISongDAO {
 
     @Override
     public Song getSongById(int id) {
-        Session currentSession = sessionFactory.getCurrentSession();
-        return currentSession.get(Song.class, id); // or load?
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Song.class, id); // or load?
 ////        logger.info("Song by ID = " + song);
 //        return song;
     }
@@ -65,7 +65,7 @@ public class SongDAO implements ISongDAO {
     @Override
     public void deleteSong(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Song song = (Song) session.load(Song.class, id);
+        Song song = session.load(Song.class, id);
         if(null != song){
             session.delete(song);
         }

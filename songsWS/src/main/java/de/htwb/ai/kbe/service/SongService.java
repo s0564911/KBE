@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service//("songService")
+@Service("songService")
 public class SongService implements ISongService{
 
     private final ISongDAO songDAO;

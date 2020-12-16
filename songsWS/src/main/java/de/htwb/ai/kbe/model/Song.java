@@ -2,7 +2,7 @@ package de.htwb.ai.kbe.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity//(name = "songs")
 @Table(name="songs")
 public class Song {
 
@@ -17,18 +17,10 @@ public class Song {
                 + released + "]";
     }
 
-
-    @Column(name="title")
-    private String title;
-
-    @Column(name="artist")
-    private String artist;
-
-    @Column(name="label")
-    private String label;
-
-    @Column(name="released")
-    private int released;
+    @Column(name="title") private String title;
+    @Column(name="artist") private String artist;
+    @Column(name="label") private String label;
+    @Column(name="released") private int released;
 
     public Song() {}
 
