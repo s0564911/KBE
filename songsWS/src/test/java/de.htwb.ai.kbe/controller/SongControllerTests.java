@@ -165,15 +165,7 @@ public class SongControllerTests {
 
     // put ID
 
-<<<<<<< Updated upstream
-    @Test // ToDo: was 404 / on max
-=======
-<<<<<<< HEAD
     @Test
-=======
-    @Test // ToDo: was 404 / on max
->>>>>>> ec32eb0754fe0e07a6acd76c43d8b4f08bcd8ac1
->>>>>>> Stashed changes
     void updateSongShouldReturn204ForValidIDAndJSON() throws Exception {
         String json =
 
@@ -192,11 +184,7 @@ public class SongControllerTests {
         ;
     }
 
-<<<<<<< HEAD
     @Test
-=======
-    @Test // ToDo: was 404
->>>>>>> ec32eb0754fe0e07a6acd76c43d8b4f08bcd8ac1
     void updateSongShouldReturn400ForInvalidIDInPayload() throws Exception {
         String json =
 
