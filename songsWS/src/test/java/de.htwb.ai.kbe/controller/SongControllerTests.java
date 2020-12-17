@@ -29,7 +29,7 @@ public class SongControllerTests {
     @BeforeEach
     public void setup() throws InterruptedException {
         // enhance calm pls
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         SessionFactory sessionFactory =
                 new MetadataSources(
                         new StandardServiceRegistryBuilder()
@@ -50,7 +50,7 @@ public class SongControllerTests {
 
     @AfterEach
     void closeTransaction() {
-        tx.commit();
+//        tx.commit();
         session.close();
     }
 
@@ -123,7 +123,7 @@ public class SongControllerTests {
         ;
     }
 
-    @Test // on max
+    @Test
     void addSongShouldReturn400ForInvalidJSON() throws Exception {
         String json =
 
@@ -141,7 +141,6 @@ public class SongControllerTests {
     }
 
     @Test
-        // ~
     void addSongShouldReturn415ForXML() throws Exception {
         String xml =
 
@@ -158,7 +157,6 @@ public class SongControllerTests {
     }
 
     @Test
-        // ~ // on max
     void addSongShouldReturn415ForEmptyPayload() throws Exception {
         mockMvc.perform(post("/songs/"))
                 .andExpect(status().is(415))
@@ -167,7 +165,15 @@ public class SongControllerTests {
 
     // put ID
 
+<<<<<<< Updated upstream
     @Test // ToDo: was 404 / on max
+=======
+<<<<<<< HEAD
+    @Test
+=======
+    @Test // ToDo: was 404 / on max
+>>>>>>> ec32eb0754fe0e07a6acd76c43d8b4f08bcd8ac1
+>>>>>>> Stashed changes
     void updateSongShouldReturn204ForValidIDAndJSON() throws Exception {
         String json =
 
@@ -186,7 +192,11 @@ public class SongControllerTests {
         ;
     }
 
+<<<<<<< HEAD
+    @Test
+=======
     @Test // ToDo: was 404
+>>>>>>> ec32eb0754fe0e07a6acd76c43d8b4f08bcd8ac1
     void updateSongShouldReturn400ForInvalidIDInPayload() throws Exception {
         String json =
 
@@ -224,7 +234,7 @@ public class SongControllerTests {
         ;
     }
 
-    @Test // ToDo: was 404
+    @Test
     void updateSongShouldReturn400ForInvalidJSON() throws Exception {
         String json =
 
@@ -242,7 +252,7 @@ public class SongControllerTests {
         ;
     }
 
-    @Test // ~ // on max
+    @Test
     void updateSongShouldReturn415ForXML() throws Exception {
         String xml =
 
@@ -259,7 +269,7 @@ public class SongControllerTests {
         ;
     }
 
-    @Test // ~ // on max
+    @Test
     void updateSongShouldReturn415ForEmptyPayload() throws Exception {
         mockMvc.perform(put("/songs/" + currentID))
                 .andExpect(status().is(415))
@@ -268,15 +278,7 @@ public class SongControllerTests {
 
 //     delete ID
 
-//     rather dont
-//    @Test
-//    void deleteSongShouldReturn204ForValidID() throws Exception {
-//        mockMvc.perform(delete("/songs/" + currentID))
-//                .andExpect(status().is(204))
-//        ;
-//    }
-
-    @Test // on max
+    @Test
     void deleteSongShouldReturn400ForInvalidID() throws Exception {
         mockMvc.perform(delete("/songs/3000"))
                 .andExpect(status().is(400))
