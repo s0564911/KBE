@@ -167,24 +167,24 @@ public class SongControllerTests {
 
     // put ID
 
-//    @Test // ToDo: was 404 / on max
-//    void updateSongShouldReturn204ForValidIDAndJSON() throws Exception {
-//        String json =
-//
-//                "{" +
-//                        "    \"id\": \"" + (currentID - 10) + "\"," +
-//                        "    \"title\": \"I Ain't tha 1\"," +
-//                        "    \"artist\": \"N.W.A.\"," +
-//                        "    \"label\": \"Ruthless\"," +
-//                        "    \"released\": 1988" +
-//                        "}";
-//
-//        mockMvc.perform(put("/songs/" + (currentID - 10))
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(json))
-//                .andExpect(status().is(204))
-//        ;
-//    }
+    @Test // ToDo: was 404 / on max
+    void updateSongShouldReturn204ForValidIDAndJSON() throws Exception {
+        String json =
+
+                "{" +
+                        "    \"id\": \"" + (currentID - 10) + "\"," +
+                        "    \"title\": \"I Ain't tha 1\"," +
+                        "    \"artist\": \"N.W.A.\"," +
+                        "    \"label\": \"Ruthless\"," +
+                        "    \"released\": 1988" +
+                        "}";
+
+        mockMvc.perform(put("/songs/" + (currentID - 10))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
+                .andExpect(status().is(204))
+        ;
+    }
 
     @Test // ToDo: was 404
     void updateSongShouldReturn400ForInvalidIDInPayload() throws Exception {
