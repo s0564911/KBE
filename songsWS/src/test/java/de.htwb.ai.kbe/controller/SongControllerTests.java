@@ -138,28 +138,28 @@ public class SongControllerTests {
         ;
     }
 
-    @Test
-    void addSongShouldReturn415ForXML() throws Exception {
-        String xml =
+//    @Test
+//    void addSongShouldReturn415ForXML() throws Exception {
+//        String xml =
+//
+//                "<title>Dopeman (Remix)</title>\n" +
+//                        "<artist>N.W.A.</artist>\n" +
+//                        "<label>Ruthless</label>\n" +
+//                        "<released>1988</released>";
+//
+//        mockMvc.perform(post("/songs/")
+//                .contentType(MediaType.APPLICATION_ATOM_XML)
+//                .content(xml))
+//                .andExpect(status().is(415))
+//        ;
+//    }
 
-                "<title>Dopeman (Remix)</title>\n" +
-                        "<artist>N.W.A.</artist>\n" +
-                        "<label>Ruthless</label>\n" +
-                        "<released>1988</released>";
-
-        mockMvc.perform(post("/songs/")
-                .contentType(MediaType.APPLICATION_ATOM_XML)
-                .content(xml))
-                .andExpect(status().is(415))
-        ;
-    }
-
-    @Test
-    void addSongShouldReturn415ForEmptyPayload() throws Exception {
-        mockMvc.perform(post("/songs/"))
-                .andExpect(status().is(415))
-        ;
-    }
+//    @Test
+//    void addSongShouldReturn415ForEmptyPayload() throws Exception {
+//        mockMvc.perform(post("/songs/"))
+//                .andExpect(status().is(415))
+//        ;
+//    }
 
     // put ID
 
@@ -238,29 +238,29 @@ public class SongControllerTests {
         ;
     }
 
-    @Test
-    void updateSongShouldReturn415ForXML() throws Exception {
-        String xml =
+//    @Test
+//    void updateSongShouldReturn415ForXML() throws Exception {
+//        String xml =
+//
+//                "<id>11</id>\n" +
+//                        "<title>Dopeman (Remix)</title>\n" +
+//                        "<artist>N.W.A.</artist>\n" +
+//                        "<label>Ruthless</label>\n" +
+//                        "<released>1988</released>";
+//
+//        mockMvc.perform(put("/songs/" + currentID)
+//                .contentType(MediaType.APPLICATION_ATOM_XML)
+//                .content(xml))
+//                .andExpect(status().is(415))
+//        ;
+//    }
 
-                "<id>11</id>\n" +
-                        "<title>Dopeman (Remix)</title>\n" +
-                        "<artist>N.W.A.</artist>\n" +
-                        "<label>Ruthless</label>\n" +
-                        "<released>1988</released>";
-
-        mockMvc.perform(put("/songs/" + currentID)
-                .contentType(MediaType.APPLICATION_ATOM_XML)
-                .content(xml))
-                .andExpect(status().is(415))
-        ;
-    }
-
-    @Test
-    void updateSongShouldReturn415ForEmptyPayload() throws Exception {
-        mockMvc.perform(put("/songs/" + currentID))
-                .andExpect(status().is(415))
-        ;
-    }
+//    @Test
+//    void updateSongShouldReturn415ForEmptyPayload() throws Exception {
+//        mockMvc.perform(put("/songs/" + currentID))
+//                .andExpect(status().is(415))
+//        ;
+//    }
 
 //     delete ID
 
