@@ -23,7 +23,7 @@ public class UserDAO implements IUserDAO {
     @Override
     public User getUserByUserId(String userId) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(User.class, userId);
+        return session.load(User.class, userId);
     }
 
     @Override

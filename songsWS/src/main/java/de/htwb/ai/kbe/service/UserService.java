@@ -24,9 +24,4 @@ public class UserService implements IUserService{
         return this.userDAO.generateNewToken();
     }
 
-//    @Override
-//    @Transactional
-//    public List<User> getUsers() {
-//        return this.userDAO.getUsers();
-//    }
 }

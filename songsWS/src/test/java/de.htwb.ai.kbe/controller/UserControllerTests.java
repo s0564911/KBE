@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +19,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class UserControllerTests {
     private MockMvc mockMvc;
-    private Transaction tx;
     private Session session;
 
     @BeforeEach
@@ -41,18 +39,17 @@ public class UserControllerTests {
                                 ))).build();
 
         session = sessionFactory.getCurrentSession();
-        tx = session.beginTransaction();
+        Transaction tx = session.beginTransaction();
     }
 
     @AfterEach
     void closeTransaction(){
-        tx.commit();
         session.close();
     }
 
     @Test
     void authorizeUserShouldReturnOKAndTokenForValidCredentials() throws Exception {
-        String json = "{\"userid\":\"mmuster\",\"password\":\"pass1234\"}";
+        String json = "{\"userId\":\"mmuster\",\"password\":\"pass1234\"}";
 
         mockMvc.perform(post("/auth/")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -64,7 +61,7 @@ public class UserControllerTests {
 
     @Test
     void authorizeUserShouldReturn401ForInvalidPass() throws Exception {
-        String json = "{\"userid\":\"mmuster\",\"password\":\"pass1235\"}";
+        String json = "{\"userId\":\"mmuster\",\"password\":\"pass1235\"}";
 
         mockMvc.perform(post("/auth/")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -75,7 +72,7 @@ public class UserControllerTests {
 
     @Test
     void authorizeUserShouldReturn401ForNoPass() throws Exception {
-        String json = "{\"userid\":\"mmuster\"}";
+        String json = "{\"userId\":\"mmuster\"}";
 
         mockMvc.perform(post("/auth/")
                 .contentType(MediaType.APPLICATION_JSON)

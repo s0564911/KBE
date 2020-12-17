@@ -21,7 +21,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 public class SongControllerTests {
     private MockMvc mockMvc;
-    private Transaction tx;
     private Session session;
 
     private static final int currentID = 101;
@@ -45,12 +44,11 @@ public class SongControllerTests {
                                 ))).build();
 
         session = sessionFactory.getCurrentSession();
-        tx = session.beginTransaction();
+        Transaction tx = session.beginTransaction();
     }
 
     @AfterEach
     void closeTransaction() {
-//        tx.commit();
         session.close();
     }
 

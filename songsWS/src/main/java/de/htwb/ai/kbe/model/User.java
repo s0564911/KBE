@@ -8,50 +8,50 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [userId=" + userid + ", firstname=" + firstname + ", lastname=" + lastname + "]";
+        return "User [userId=" + userId + ", firstname=" + firstName + ", lastname=" + lastName + "]";
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="userid")
-    private String userid;
+    @Column(name="userId")
+    private String userId;
 
 
-    @Column(name="firstname") private String firstname;
-    @Column(name="lastname") private String lastname;
+    @Column(name="firstName") private String firstName;
+    @Column(name="lastName") private String lastName;
     @Column(name="password") private String password;
 
     public User() {}
 
     private User(Builder builder) {
-        this.userid = builder.userid;
-        this.firstname = builder.firstname;
-        this.lastname = builder.lastname;
+        this.userId = builder.userId;
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
         this.password = builder.password;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getUserId() {
+        return userId;
     }
     
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserId(String userid) {
+        this.userId = userid;
     }
     
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
     
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
     
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
     
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
     
     public String getPassword() { return password; }
@@ -69,26 +69,26 @@ public class User {
      */
     public static final class Builder {
 //        private int id;
-        private String userid;
-        private String firstname;
-        private String lastname;
+        private String userId;
+        private String firstName;
+        private String lastName;
         private String password;
 
         private Builder() {
         }
 
         public Builder withUserId(String userId) {
-            this.userid = userId;
+            this.userId = userId;
             return this;
         }
 
         public Builder withFirstname(String firstname) {
-            this.firstname = firstname;
+            this.firstName = firstname;
             return this;
         }
 
         public Builder withLastname(String lastname) {
-            this.lastname = lastname;
+            this.lastName = lastname;
             return this;
         }
 
