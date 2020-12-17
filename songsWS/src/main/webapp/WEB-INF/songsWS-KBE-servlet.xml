@@ -33,9 +33,17 @@
 
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 
-        <property name="url" value="jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_76b0255c9916e6e?reconnect=true"/>
+<!--        <property name="url" value="jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_76b0255c9916e6e?reconnect=true"/>-->
+<!--        <property name="username" value="b28fbd86623d63"/>-->
+<!--        <property name="password" value="39dfa470"/>-->
+
+        <property name="url" value="jdbc:mysql://kbe.canxccuxooti.eu-central-1.rds.amazonaws.com/kbe"/>
         <property name="username" value="b28fbd86623d63"/>
         <property name="password" value="39dfa470"/>
+
+<!--        <property name="url" value="jdbc:mysql://remotemysql.com/kLR2fLv8CS"/>-->
+<!--        <property name="username" value="kLR2fLv8CS"/>-->
+<!--        <property name="password" value="54m9hr7qQb"/>-->
 
 
 <!--        <property name="url" value="jdbc:mysql://aqx5w9yc5brambgl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ohe2ppwo29y0bg7o"/>-->

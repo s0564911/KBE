@@ -22,13 +22,14 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 public class SongControllerTests {
     private MockMvc mockMvc;
     private Session session;
+    Transaction tx;
 
-    private static final int currentID = 101;
+    private static final int currentID = 10;
 
     @BeforeEach
     public void setup() throws InterruptedException {
         // enhance calm pls
-        Thread.sleep(5000);
+        Thread.sleep(500);
         SessionFactory sessionFactory =
                 new MetadataSources(
                         new StandardServiceRegistryBuilder()
@@ -44,7 +45,7 @@ public class SongControllerTests {
                                 ))).build();
 
         session = sessionFactory.getCurrentSession();
-        Transaction tx = session.beginTransaction();
+        tx = session.beginTransaction();
     }
 
     @AfterEach
@@ -87,7 +88,7 @@ public class SongControllerTests {
     // post
 
     @Test
-    void addSongShouldReturn201ForValidJSON_plus_deleteSongShouldReturn204ForValidID() throws Exception {
+    void addSongShouldReturn201ForValidJSON() throws Exception {
         String json =
 
                 "{" +
@@ -111,14 +112,14 @@ public class SongControllerTests {
                 .andExpect(jsonPath("$.released").value(1988))
                 .andExpect(header().string("Location", "/rest/songs/"))
                 .andReturn().getResponse().getContentAsString();
-        ;
+
         JSONParser parser = new JSONParser();
         JSONObject result = (JSONObject) parser.parse(content);
         int id = (int) result.getAsNumber("id");
-
         mockMvc.perform(delete("/songs/" + id))
                 .andExpect(status().is(204))
         ;
+        tx.commit();
     }
 
     @Test
@@ -168,14 +169,14 @@ public class SongControllerTests {
         String json =
 
                 "{" +
-                        "    \"id\": \"" + (currentID - 10) + "\"," +
+                        "    \"id\": \"" + (currentID - 1) + "\"," +
                         "    \"title\": \"I Ain't tha 1\"," +
                         "    \"artist\": \"N.W.A.\"," +
                         "    \"label\": \"Ruthless\"," +
                         "    \"released\": 1988" +
                         "}";
 
-        mockMvc.perform(put("/songs/" + (currentID - 10))
+        mockMvc.perform(put("/songs/" + (currentID - 1))
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
                 .andExpect(status().is(204))
@@ -206,12 +207,12 @@ public class SongControllerTests {
         String json =
 
                 "{" +
-                "    \"id\": \"3000\"," +
-                "    \"title\": \"Dopeman\"," +
-                "    \"artist\": \"N.W.A.\"," +
-                "    \"label\": \"Ruthless\"," +
-                "    \"released\": 1988" +
-                "}";
+                        "    \"id\": \"3000\"," +
+                        "    \"title\": \"Dopeman\"," +
+                        "    \"artist\": \"N.W.A.\"," +
+                        "    \"label\": \"Ruthless\"," +
+                        "    \"released\": 1988" +
+                        "}";
 
         mockMvc.perform(put("/songs/3000")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -225,11 +226,11 @@ public class SongControllerTests {
         String json =
 
                 "{" +
-                "    \"id\": \"" + currentID + "\"," +
-                "    \"artist\": \"N.W.A.\"," +
-                "    \"label\": \"Ruthless\"," +
-                "    \"released\": 1988" +
-                "}";
+                        "    \"id\": \"" + currentID + "\"," +
+                        "    \"artist\": \"N.W.A.\"," +
+                        "    \"label\": \"Ruthless\"," +
+                        "    \"released\": 1988" +
+                        "}";
 
         mockMvc.perform(put("/songs/" + currentID)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -263,6 +264,13 @@ public class SongControllerTests {
 //    }
 
 //     delete ID
+
+    @Test
+    void deleteSongShouldReturn204ForValidID() throws Exception {
+        mockMvc.perform(delete("/songs/" + currentID))
+                .andExpect(status().is(204))
+        ;
+    }
 
     @Test
     void deleteSongShouldReturn400ForInvalidID() throws Exception {
