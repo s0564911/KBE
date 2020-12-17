@@ -26,7 +26,7 @@ public class UserControllerTests {
     @BeforeEach
     public void setup() throws InterruptedException {
         // enhance calm pls
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         SessionFactory sessionFactory = new MetadataSources(
                 new StandardServiceRegistryBuilder()
                         .configure()
