@@ -3,7 +3,7 @@ package de.htwb.ai.kbe.model;
 import javax.persistence.*;
 
 @Entity//(name = "user")
-@Table(name="user") //(name="users") //users for working Postgres
+@Table(name="user")
 public class User {
 
     @Override

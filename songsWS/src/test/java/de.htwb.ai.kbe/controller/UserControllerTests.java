@@ -82,6 +82,17 @@ public class UserControllerTests {
     }
 
     @Test
+    void authorizeUserShouldReturn401ForNoUser() throws Exception {
+        String json = "{\"password\":\"pass1234\"}";
+
+        mockMvc.perform(post("/auth/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
+                .andExpect(status().is(401))
+        ;
+    }
+
+    @Test
     void authorizeUserShouldReturn415ForNoBody() throws Exception {
         mockMvc.perform(post("/auth/"))
                 .andExpect(status().is(415))

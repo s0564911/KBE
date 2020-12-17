@@ -19,13 +19,16 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST, produces = "text/plain", consumes = "application/json")
     public ResponseEntity<String> authorize(@RequestBody User u) {
+        if (u.getUserId() == null || u.getPassword() == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
         User user = userService.getUserByUserId(u.getUserId());
         String token = userService.generateNewToken();
         HttpHeaders header = new HttpHeaders();
         header.add("Content-type", "text/plain");
 
-        if (user == null || user.getUserId() == null ||
-                user.getPassword() == null) {
+        if (user == null || user.getUserId() == null || user.getPassword() == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 

@@ -54,7 +54,7 @@ public class SongControllerTests {
 
     // get all
 
-    @Test // on max
+    @Test
     void getAllSongsShouldReturnOKAndOnePage() throws Exception {
 
         mockMvc.perform(get("/songs/")).
@@ -66,7 +66,7 @@ public class SongControllerTests {
 
     // get ID
 
-    @Test // ToDo: Capitals ?
+    @Test
     void getSongShouldReturnOKAndJSONForExistingId() throws Exception {
         mockMvc.perform(get("/songs/1"))
                 .andExpect(status().isOk())
@@ -86,7 +86,7 @@ public class SongControllerTests {
 
     // post
 
-    @Test // on max
+    @Test
     void addSongShouldReturn201ForValidJSON_plus_deleteSongShouldReturn204ForValidID() throws Exception {
         String json =
 

@@ -59,6 +59,7 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="format_sql">false</prop>
+<!--                <prob key="lazy">false</prob>-->
 <!--                <prop key="hibernate.current_session_context_class">thread</prop>-->
             </props>
         </property>
