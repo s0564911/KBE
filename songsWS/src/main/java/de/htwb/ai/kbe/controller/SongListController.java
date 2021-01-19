@@ -29,6 +29,7 @@ public class SongListController {
 	//songlist set song rename into songlist irgendwo
 	//https://forum.hibernate.org/viewtopic.php?p=2480052 addsong als save statt persist worked
 	//isprivate funktioniert nicht
+	//delete last entry
     private final ISongListService songListService;
     private final IUserService userService;
 
@@ -45,13 +46,13 @@ public class SongListController {
      * returns public or private songlist based on if the requester owns the songlist
      */
     @RequestMapping(params="userId",method = RequestMethod.GET)
-    public ResponseEntity<List<SongList>> getAllSongs(
+    public ResponseEntity<List<SongList>> getSongByParam(
     		@RequestParam("userId") String userId,
     		@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {
     	
     	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
     	User user =userService.getUserByUserId(userId);
-    	if (user != null) {return new ResponseEntity<>(HttpStatus.NOT_FOUND);} ///idk if this comparison works
+    	if (user == null) {return new ResponseEntity<>(HttpStatus.NOT_FOUND);} ///idk if this comparison works
     	if (userService.compareTokenToUser(optionalHeader, user)) {
     		List<SongList> sl=songListService.getAllSonglistsByUser(user);
     		return new ResponseEntity<>(sl, HttpStatus.OK);
@@ -74,13 +75,15 @@ public class SongListController {
     	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
     	SongList songList = songListService.getSonglistById(id);
     	//check if songlist is empty here?
-    	if (songListService.getSonglistOwnerById(id).equals(
-    			userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)))){
+    	if (songListService.getSonglistOwnerById(id).getUserId().equals(
+    			userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)).getUserId())){
     				return new ResponseEntity<>(songList, HttpStatus.OK);
     			}
     	else {
-    		if (songList.getIspriv()) {
+    		if (songList.getIsPrivate()) {
     			return new ResponseEntity<>(HttpStatus.FORBIDDEN); }
+    		System.out.println(songListService.getSonglistOwnerById(id));
+    		System.out.println(userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)));
     		return new ResponseEntity<>(songList, HttpStatus.OK);	
     	}
     }
@@ -93,9 +96,9 @@ public class SongListController {
         headers.add("Location", "/rest/songs/");
         SongList songList = SongList.builder()  
         		.withName(s.getName())
-        		.withIsPriv(s.getIspriv())
+        		.withIsPriv(s.getIsPrivate())
         		.withOwnerid(userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)))
-        		.withSongs(s.getSongSet()).build();
+        		.withSongs(s.getSongList()).build();
         try {
             songListService.addSonglist(songList);
             System.out.println("i added a songlist"+songList);

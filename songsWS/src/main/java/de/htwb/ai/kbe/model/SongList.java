@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -34,16 +36,13 @@ public class SongList {
 	
 	
 	 @Column(name="name") private String name;
-     @Column(name="priv") private boolean isPrivate;
+     @Column(name="isPrivate") private boolean isPrivate;
 	
 
-	@OneToMany( 
-			targetEntity=Song.class,
-            cascade=CascadeType.ALL, 
-            orphanRemoval=true, 
-            fetch = FetchType.EAGER)
-	@JoinColumn(name = "title",referencedColumnName = "id")//putting name=id fetches songs of that id
-    private Set<Song> songSet;
+	@ManyToMany( cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+	@JoinTable(name = "songLists_songs", joinColumns = {@JoinColumn(name="songListsId", referencedColumnName="id")},
+	inverseJoinColumns =  {@JoinColumn(name="songsId", referencedColumnName="id")})
+    private Set<Song> songList;
 	
 	@ManyToOne
     @JoinColumn(name = "ownerId")	
@@ -56,7 +55,7 @@ public class SongList {
         this.ownerId=builder.ownerid;
         this.name=builder.name;
         this.isPrivate=builder.ispriv;
-        this.songSet=builder.songs;
+        this.songList=builder.songs;
     }
 
     public int getId() {
@@ -83,26 +82,26 @@ public class SongList {
     public void setName(String name) {
         this.name = name;
     }
-	public boolean getIspriv() {
+	public boolean getIsPrivate() {
 		return isPrivate;
 	}
-	public  void setIspriv(boolean isPriv) {
+	public  void setIsPrivate(boolean isPriv) {
 		this.isPrivate=isPriv;
 	}
-	public Set<Song> getSongSet() {
-        if(songSet == null) {
-            songSet = new HashSet<>();
+	public Set<Song> getSongList() {
+        if(songList == null) {
+            songList = new HashSet<>();
         }
-        return songSet;
+        return songList;
     }
-	public void setSongSet(Set<Song> songSet) {
-        this.songSet = songSet;
+	public void setSongList(Set<Song> songSet) {
+        this.songList = songSet;
 	}
 	public void addSong(Song song) {
-        if(songSet == null) {
-            songSet = new HashSet<>();
+        if(songList == null) {
+            songList = new HashSet<>();
         }
-        this.songSet.add(song);
+        this.songList.add(song);
     }
 	 public static Builder builder() {
 	        return new Builder();
