@@ -7,6 +7,10 @@ import java.util.List;
 public interface IUserService {
 
     User getUserByUserId(String userId);
-    String generateNewToken();
-//    List<User> getUsers();
+    String generateNewToken(String user, String password);
+    boolean validateJWT(String jws);
+    
+    String getUsernameFromToken(String jws);
+    boolean compareTokenToUser(String token, User user);
+    
 }

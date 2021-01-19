@@ -3,6 +3,9 @@ package de.htwb.ai.kbe.controller;
 import java.util.List;
 
 import de.htwb.ai.kbe.service.ISongService;
+import de.htwb.ai.kbe.service.IUserService;
+
+//import org.graalvm.compiler.lir.LIRInstruction.Use;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,18 +18,25 @@ import javax.persistence.EntityNotFoundException;
 @RestController
 @RequestMapping(value = "/songs")
 public class SongController {
-
+//	autowired?
     private final ISongService songService;
+    
+    private final IUserService userService;
 
-    public SongController(ISongService songService) {
+    public SongController(ISongService songService, IUserService userService) {
         this.songService = songService;
+        this.userService = userService;
     }
-
+    
+    
     //GET https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Song>> getAllSongs() {
+    public ResponseEntity<List<Song>> getAllSongs(
+    		@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {
+    	
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
+    	
         List<Song> songs = songService.getAllSongs();
-
         if (songs == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -96,6 +106,19 @@ public class SongController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    
+    
+    //helper
+    public boolean auth (String optionalHeader) {
+    	if (optionalHeader.equals("")) {
+    		return false;
+    	}
+    	else if (userService.validateJWT(optionalHeader)) {
+    		return true;
+    	}
+    	else {return false;}
+    }
+
 
 }
 

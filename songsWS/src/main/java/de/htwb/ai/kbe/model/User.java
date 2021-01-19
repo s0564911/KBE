@@ -10,7 +10,8 @@ public class User {
     public String toString() {
         return "User [userId=" + userId + ", firstname=" + firstName + ", lastname=" + lastName + "]";
     }
-
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="userId")
@@ -34,6 +35,8 @@ public class User {
         return userId;
     }
     
+    
+    
     public void setUserId(String userid) {
         this.userId = userid;
     }
@@ -55,6 +58,8 @@ public class User {
     }
     
     public String getPassword() { return password; }
+    
+ 
 
     /**
      * Creates builder to build {@link User}.

@@ -7,11 +7,23 @@ import org.hibernate.SessionFactory;
 //import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import javax.crypto.spec.SecretKeySpec;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.xml.bind.DatatypeConverter;
+
 import java.util.List;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import java.security.Key;
 
 @Repository("songDAO")
 public class SongDAO implements ISongDAO {
@@ -71,5 +83,6 @@ public class SongDAO implements ISongDAO {
         }
 //        logger.info("Song deleted = " + song);
     }
+    
 
 }

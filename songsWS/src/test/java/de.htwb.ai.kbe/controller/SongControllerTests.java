@@ -26,28 +26,18 @@ public class SongControllerTests {
 
     private static final int currentID = 10;
 
-    @BeforeEach
-    public void setup() throws InterruptedException {
-        // enhance calm pls
-        Thread.sleep(500);
-        SessionFactory sessionFactory =
-                new MetadataSources(
-                        new StandardServiceRegistryBuilder()
-                                .configure()
-                                .build()
-                ).buildMetadata().buildSessionFactory();
-
-        mockMvc =
-                MockMvcBuilders.standaloneSetup(
-                        new SongController(
-                                new SongService(
-                                        new SongDAO(sessionFactory)
-                                ))).build();
-
-        session = sessionFactory.getCurrentSession();
-        tx = session.beginTransaction();
-    }
-
+	/*
+	 * @BeforeEach public void setup() throws InterruptedException { // enhance calm
+	 * pls Thread.sleep(500); SessionFactory sessionFactory = new MetadataSources(
+	 * new StandardServiceRegistryBuilder() .configure() .build()
+	 * ).buildMetadata().buildSessionFactory();
+	 * 
+	 * mockMvc = MockMvcBuilders.standaloneSetup( new SongController( new
+	 * SongService( new SongDAO(sessionFactory) ))).build();
+	 * 
+	 * session = sessionFactory.getCurrentSession(); tx =
+	 * session.beginTransaction(); }
+	 */
     @AfterEach
     void closeTransaction() {
         session.close();

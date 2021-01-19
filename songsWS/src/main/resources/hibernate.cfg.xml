@@ -39,6 +39,7 @@
 
         <mapping class="de.htwb.ai.kbe.model.Song"/>
         <mapping class="de.htwb.ai.kbe.model.User"/>
+        <mapping class="de.htwb.ai.kbe.model.SongList"/>
 
     </session-factory>
 </hibernate-configuration>

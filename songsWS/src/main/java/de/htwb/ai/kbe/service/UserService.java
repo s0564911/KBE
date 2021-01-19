@@ -19,9 +19,29 @@ public class UserService implements IUserService{
     public User getUserByUserId(String userId) {
         return this.userDAO.getUserByUserId(userId);
     }
-
-    public String generateNewToken() {
-        return this.userDAO.generateNewToken();
+    @Override
+    @Transactional
+    public String generateNewToken(String user, String password) {
+        return this.userDAO.generateNewToken( user,  password);
     }
+    @Override
+    @Transactional
+    public boolean validateJWT(String jws) {
+    	return this.userDAO.isValidToken(jws);
+    }
+
+	@Override
+	@Transactional
+	public String getUsernameFromToken(String jws) {
+		// TODO Auto-generated method stub
+		return this.userDAO.getUserFromToken(jws);
+	}
+
+	@Override
+	@Transactional
+	public boolean compareTokenToUser(String token, User user) {
+		// TODO Auto-generated method stub
+		return this.userDAO.compareTokenToUser(token, user);
+	}
 
 }
