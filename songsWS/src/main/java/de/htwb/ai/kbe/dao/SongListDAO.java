@@ -75,7 +75,7 @@ public class SongListDAO implements ISongListDAO {
         
         Predicate[] predicates = new Predicate[2];
         predicates[0] = cb.equal(root.get("ownerId"), user);
-        predicates[1] = cb.isFalse(root.get("isPriv") );
+        predicates[1] = cb.isFalse(root.get("isPrivate") );
         cq.select(root).where(predicates);
         List<SongList> result = session.createQuery(cq).getResultList();
         return result;

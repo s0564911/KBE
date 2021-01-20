@@ -23,11 +23,7 @@ import javax.persistence.EntityNotFoundException;
 @RestController
 @RequestMapping(value = "/songLists")
 public class SongListController {
-	//Ausgabeformate für GET sind JSON und XML?? was da zu tun
-	//die angelegte liste wegen songlists?
 	//token secret noch seperat packen
-	//post checkt noch nicht ob die songs vorhanden sind(gute und schlechte songs aufgabenstellung)
-	//song endpoint kurz testen wegen auth header validierung
 	//muss noch testen ob nur public methods geschickt werden bei get?userid=.. wenn noetig
     private final ISongListService songListService;
     private final IUserService userService;
