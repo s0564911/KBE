@@ -124,12 +124,18 @@
             <version>2.12.0-rc2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+		    <groupId>com.fasterxml.jackson.dataformat</groupId>
+		    <artifactId>jackson-dataformat-xml</artifactId>
+		    <version>2.12.1</version>
+		</dependency>
         <!-- needed for proxies in JDK 11-->
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>3.27.0-GA</version>
         </dependency>
+        
 
         <!-- Tests -->
         <dependency>

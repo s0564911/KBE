@@ -46,7 +46,7 @@ public class SongListController {
      * @return
      * returns public or private songlist based on if the requester owns the songlist
      */
-    @RequestMapping(params="userId",method = RequestMethod.GET)
+    @RequestMapping(params="userId",method = RequestMethod.GET,produces = {"application/json", "application/xml"})
     public ResponseEntity<List<SongList>> getSongByParam(
     		@RequestParam("userId") String userId,
     		@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {

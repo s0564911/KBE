@@ -47,6 +47,7 @@ public class SongController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<Song> getSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
     @PathVariable("id") int id) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
     	
         Song song = songService.getSongById(id);
         if (song == null) {
@@ -59,6 +60,7 @@ public class SongController {
     @RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
     public ResponseEntity<Song> addSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
     @RequestBody Song s) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/rest/songs/");
@@ -81,7 +83,7 @@ public class SongController {
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
     public ResponseEntity<Song> updateSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
     @PathVariable("id") int id, @RequestBody Song s) {
-
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
 
         Song song = Song.builder()
                 .withTitle(s.getTitle())
@@ -104,6 +106,7 @@ public class SongController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Song> deleteSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
     @PathVariable("id") int id) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
         try {
             songService.deleteSong(id);
         } catch (EntityNotFoundException e) {
