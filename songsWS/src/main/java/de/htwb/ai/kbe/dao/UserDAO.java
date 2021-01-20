@@ -44,7 +44,7 @@ public class UserDAO implements IUserDAO {
     public String generateNewToken(String user, String password) {
     	  long nowMillis = System.currentTimeMillis();
           Date now = new Date(nowMillis);
-          byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary("oeRaYY7Wo24sDqKSX3IM9ASGmdGPmkTd9jo1QTy4b7P9Ze5_9hKo");
+          byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(private_key);
           Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
 
           JwtBuilder builder = Jwts.builder()
