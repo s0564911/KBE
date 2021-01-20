@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import de.htwb.ai.kbe.service.ISongListService;
+import de.htwb.ai.kbe.service.ISongService;
 import de.htwb.ai.kbe.service.IUserService;
 
 //import org.graalvm.compiler.lir.LIRInstruction.Use;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import de.htwb.ai.kbe.model.Song;
 import de.htwb.ai.kbe.model.SongList;
 import de.htwb.ai.kbe.model.User;
 
@@ -21,21 +23,20 @@ import javax.persistence.EntityNotFoundException;
 @RestController
 @RequestMapping(value = "/songLists")
 public class SongListController {
-	//frage: soll jeder public songslists bekommen oder nur angemeldete users?
 	//Ausgabeformate für GET sind JSON und XML?? was da zu tun
 	//die angelegte liste wegen songlists?
+	//token secret noch seperat packen
 	//post checkt noch nicht ob die songs vorhanden sind(gute und schlechte songs aufgabenstellung)
-	//validate alle song anfragen, bisher nur getall zum testen
-	//songlist set song rename into songlist irgendwo
-	//https://forum.hibernate.org/viewtopic.php?p=2480052 addsong als save statt persist worked
-	//isprivate funktioniert nicht
-	//delete last entry
+	//song endpoint kurz testen wegen auth header validierung
+	//muss noch testen ob nur public methods geschickt werden bei get?userid=.. wenn noetig
     private final ISongListService songListService;
     private final IUserService userService;
+    private final ISongService songService;
 
-    public SongListController(ISongListService songListService,IUserService userService) {
+    public SongListController(ISongListService songListService,IUserService userService, ISongService songService) {
         this.userService = userService;
-		this.songListService = songListService;    
+		this.songListService = songListService;  
+		this.songService = songService;
     }
     
     /**
@@ -94,15 +95,26 @@ public class SongListController {
     	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
     	HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/rest/songs/");
+        
+        Set<Song> checkList=s.getSongList();
+        for (Song song :checkList) {
+        	Song compare=songService.getSongById(song.getId());
+        	if (!(compare.getArtist().equals(song.getArtist())&&
+        			compare.getLabel().equals(song.getLabel())&&
+        			compare.getReleased()==song.getReleased()&&
+        			compare.getTitle().equals(song.getTitle()))) {
+        		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        	}
+        }
+        
+        
         SongList songList = SongList.builder()  
         		.withName(s.getName())
         		.withIsPriv(s.getIsPrivate())
         		.withOwnerid(userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)))
         		.withSongs(s.getSongList()).build();
         try {
-            songListService.addSonglist(songList);
-            System.out.println("i added a songlist"+songList);
-            
+            songListService.addSonglist(songList); 
         } catch (Exception e) {
         	System.out.println(e);
             return new ResponseEntity<>(songList, HttpStatus.BAD_REQUEST);

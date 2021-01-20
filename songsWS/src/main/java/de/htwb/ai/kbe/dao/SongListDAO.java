@@ -50,7 +50,7 @@ public class SongListDAO implements ISongListDAO {
     	Session session = sessionFactory.getCurrentSession();
          
          SongList sl = session.get(SongList.class, id);
-         return sl.getOwnerid();
+         return sl.getOwneridObject();
     }
 
 	@Override

@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import de.htwb.ai.kbe.model.Song;
 import de.htwb.ai.kbe.model.Song.Builder;
@@ -26,6 +28,7 @@ import de.htwb.ai.kbe.model.Song.Builder;
 
 @Entity
 @Table(name="songLists")
+@JsonPropertyOrder({ "id", "ownerId", "name", "isPrivate", "songList" })
 public class SongList {
 	//ein user hat mehere songlists, eine songlist hat einen user
 	// ein songlist hat mehrere songs, ein song hat mehrer songlists
@@ -65,14 +68,16 @@ public class SongList {
     public void setId(int id) {
         this.id = id;
     }
-    public String getOwneridString() {
-    	return ownerId.getUserId();
+    @JsonIgnore
+    public User getOwneridObject() {
+    	return ownerId;
     }
-    public User getOwnerid() {
-        return ownerId;
+    
+    public String getOwnerId() {
+        return ownerId.getUserId();
     }
 
-    public void setOwnerid(User id) {
+    public void setOwnerId(User id) {
         this.ownerId = id;
     }
     public String getName() {

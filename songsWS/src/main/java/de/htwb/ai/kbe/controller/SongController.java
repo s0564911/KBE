@@ -45,7 +45,9 @@ public class SongController {
 
     //GET https://localhost:8443/songsWS-KBE/rest/songs/1
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Song> getSong(@PathVariable("id") int id) {
+    public ResponseEntity<Song> getSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @PathVariable("id") int id) {
+    	
         Song song = songService.getSongById(id);
         if (song == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -55,7 +57,8 @@ public class SongController {
 
     //POST https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Song> addSong(@RequestBody Song s) {
+    public ResponseEntity<Song> addSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @RequestBody Song s) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/rest/songs/");
@@ -76,7 +79,8 @@ public class SongController {
 
     //PUT https://localhost:8443/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Song> updateSong(@PathVariable("id") int id, @RequestBody Song s) {
+    public ResponseEntity<Song> updateSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @PathVariable("id") int id, @RequestBody Song s) {
 
 
         Song song = Song.builder()
@@ -98,7 +102,8 @@ public class SongController {
 
     //DELETE https://localhost:8443/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Song> deleteSong(@PathVariable("id") int id) {
+    public ResponseEntity<Song> deleteSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @PathVariable("id") int id) {
         try {
             songService.deleteSong(id);
         } catch (EntityNotFoundException e) {
