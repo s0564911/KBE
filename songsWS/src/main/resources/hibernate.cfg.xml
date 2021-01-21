@@ -6,7 +6,7 @@
         <property name="hibernate.archive.autodetection">class,hbm</property>
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
-        <property name="connection.url">jdbc:hsqldb:file:testDataSource;sql.syntax_mys=true</property>
+        <property name="connection.url">jdbc:hsqldb:mem:testDataSource;sql.syntax_mys=true</property>
         <property name="connection.username">SA</property>
         <property name="connection.password"></property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
