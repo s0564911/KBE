@@ -10,6 +10,8 @@ CREATE TABLE "songLists_songs"("songListsId" INTEGER NOT NULL,"songsId" INTEGER 
 
 INSERT INTO "songs" ("title", "artist", "label", "released") VALUES ('Straight Outta Compton', 'N.W.A.', 'Ruthless', '1988'),('Fuck tha Police', 'N.W.A.', 'Ruthless', '1988'),('Gangsta Gangsta', 'N.W.A.', 'Ruthless', '1988'),('If It Aint Ruff', 'N.W.A.', 'Ruthless', '1988'),('Parental Discretion Iz Advised', 'N.W.A.', 'Ruthless', '1988'),('8 Ball (Remix)', 'N.W.A.', 'Ruthless', '1988'),('Something Like That', 'N.W.A.', 'Ruthless', '1988'),('Express Yourself', 'N.W.A.', 'Ruthless', '1988'),('Comptons N the House (Remix)', 'N.W.A.', 'Ruthless', '1988'),('I Aint tha 1', 'N.W.A.', 'Ruthless', '1988');
 INSERT INTO "user" ("userId", "password", "firstName", "lastName") VALUES ('mmuster', 'pass1234', 'Maxime', 'Muster'),('eschuler', 'pass1234', 'Elena', 'Schuler');
+INSERT INTO "songLists" ("ownerId", "name", "isPrivate") VALUES ('mmuster', 'list1', true),('mmuster', 'list1', true),('mmuster', 'list2', true),('eschuler', 'list3', true),('eschuler', 'list4', true);
+INSERT INTO "songLists_songs" ("songListsId", "songsId") VALUES (1,3), (1,5), (2,1), (2,2), (3,3), (3,6), (4,1), (4,4);
 
 -- SHUTDOWN IMMEDIATELY;
 COMMIT ;

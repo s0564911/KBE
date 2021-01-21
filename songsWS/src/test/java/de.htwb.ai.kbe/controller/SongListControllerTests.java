@@ -76,8 +76,18 @@ public class SongListControllerTests {
         Song song5 = Song.builder().withTitle("8 Ball (Remix)").withArtist("N.W.A.").withLabel("Ruthless").withReleased(1988).build();
         Song song6 = Song.builder().withTitle("Something Like That").withArtist("N.W.A.").withLabel("Ruthless").withReleased(1988).build();
 
+
+        String query = "INSERT INTO \"user\" (\"userId\", \"password\", \"firstName\", \"lastName\") VALUES ('mmuster', 'pass1234', 'Maxime', 'Muster'),('eschuler', 'pass1234', 'Elena', 'Schuler');";
+        session.createSQLQuery(query);
+
         session.save(mmuster);
         session.save(eschuler);
+
+        tx.commit();
+
+        session = sessionFactory.getCurrentSession();
+        tx = session.beginTransaction();
+
         session.save(song1);
         session.save(song2);
         session.save(song3);
@@ -106,6 +116,13 @@ public class SongListControllerTests {
         session.save(songList2);
         session.save(songList3);
         session.save(songList4);
+
+//        String query2 = "INSERT INTO \"songLists\" (\"ownerId\", \"name\", \"isPrivate\") VALUES ('mmuster', 'list1', true),('mmuster', 'list1', true),('mmuster', 'list2', true),('eschuler', 'list3', true),('eschuler', 'list4', true);";
+////        session.createSQLQuery(query2);
+//        session.createNativeQuery(query2);
+//        String query3 = "INSERT INTO \"songLists_songs\" (\"songListsId\", \"songsId\") VALUES (1,3), (1,5), (2,1), (2,2), (3,3), (3,6), (4,1), (4,4);";
+////        session.createSQLQuery(query3);
+//        session.createNativeQuery(query3);
 
         tx.commit();
     }

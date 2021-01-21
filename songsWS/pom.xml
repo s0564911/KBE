@@ -90,11 +90,11 @@
 
 
         <!-- PostgreSQL -->
-<!--        <dependency>-->
-<!--            <groupId>org.postgresql</groupId>-->
-<!--            <artifactId>postgresql</artifactId>-->
-<!--            <version>42.2.18.jre7</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.postgresql</groupId>-->
+        <!--            <artifactId>postgresql</artifactId>-->
+        <!--            <version>42.2.18.jre7</version>-->
+        <!--        </dependency>-->
 
         <!-- MySQL -->
         <dependency>
@@ -133,10 +133,10 @@
         </dependency>
         <!--  to return xml -->
         <dependency>
-		    <groupId>com.fasterxml.jackson.dataformat</groupId>
-		    <artifactId>jackson-dataformat-xml</artifactId>
-		    <version>2.12.1</version>
-		</dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.12.1</version>
+        </dependency>
         <!-- needed for proxies in JDK 11-->
         <dependency>
             <groupId>org.javassist</groupId>
@@ -145,11 +145,11 @@
         </dependency>
         <!-- git version controller -->
         <dependency>
-		 <groupId>commons-io</groupId>
-		 <artifactId>commons-io</artifactId>
-		 <version>2.6</version>
-		</dependency>
-        
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
 
         <!-- Tests -->
         <dependency>
@@ -203,22 +203,22 @@
         </dependency>
         <!-- web token -->
         <dependency>
-		    <groupId>io.jsonwebtoken</groupId>
-		    <artifactId>jjwt-api</artifactId>
-		    <version>0.11.2</version>
-		</dependency>
-		<dependency>
-		    <groupId>io.jsonwebtoken</groupId>
-		    <artifactId>jjwt-impl</artifactId>
-		    <version>0.11.2</version>
-		    <scope>runtime</scope>
-		</dependency>
-		<dependency>
-		    <groupId>io.jsonwebtoken</groupId>
-		    <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
-		    <version>0.11.2</version>
-		    <scope>runtime</scope>
-		</dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.11.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
+            <version>0.11.2</version>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -248,34 +248,53 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
                 <version>3.0.0-M5</version>
-<!--                <version>2.22.0</version>-->
+                <!--                <version>2.22.0</version>-->
             </plugin>
-            <plugin> <!-- git-info plugin -->
-				<groupId>pl.project13.maven</groupId>
-					<artifactId>git-commit-id-plugin</artifactId>
-						<version>2.2.4</version>
-				<executions>
-				<execution>
-					<id>get-the-git-infos</id>
-				<goals>
-					<goal>revision</goal>
-				</goals>
-				</execution>
-				</executions>
-				<configuration>
-					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-					<prefix>git</prefix>
-					<verbose>false</verbose>
-					<generateGitPropertiesFile>true</generateGitPropertiesFile>
-					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
-					<format>json</format>
-				<gitDescribe>
-				<skip>false</skip>
-				<always>false</always>
-				<dirty>-dirty</dirty>
-				</gitDescribe>
-				</configuration>
-				</plugin>
+<!--            <plugin> &lt;!&ndash; git-info plugin &ndash;&gt;-->
+<!--                <groupId>pl.project13.maven</groupId>-->
+<!--                <artifactId>git-commit-id-plugin</artifactId>-->
+<!--                <version>4.0.2</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>get-the-git-infos</id>-->
+<!--                        <goals>-->
+<!--                            <goal>revision</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>-->
+<!--                    <prefix>git</prefix>-->
+<!--                    <verbose>false</verbose>-->
+<!--                    <generateGitPropertiesFile>true</generateGitPropertiesFile>-->
+<!--                    <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties-->
+<!--                    </generateGitPropertiesFilename>-->
+<!--                    <format>json</format>-->
+<!--                    <gitDescribe>-->
+<!--                        <skip>false</skip>-->
+<!--                        <always>false</always>-->
+<!--                        <dirty>-dirty</dirty>-->
+<!--                    </gitDescribe>-->
+<!--&lt;!&ndash;                    <useNativeGit>true</useNativeGit>&ndash;&gt;-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>4.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
+                    <!-- more config here as you see fit -->
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 </project>
