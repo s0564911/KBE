@@ -47,7 +47,7 @@ public class SongListController {
      * @return returns public or private songlist based on if the requester owns the songlist
      */
     @RequestMapping(params="userId",method = RequestMethod.GET,produces = {"application/json", "application/xml"})
-    public ResponseEntity<List<SongList>> getSongByParam(
+    public ResponseEntity<List<SongList>> getSongListByParam(
             @RequestParam("userId") String userId,
             @RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {
 
@@ -73,24 +73,24 @@ public class SongListController {
      * @return returns songlist based on id
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = {"application/json", "application/xml"})
-    public ResponseEntity<SongList> getSong(@PathVariable("id") int id,
-                                            @RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {
+    public ResponseEntity<SongList> getSongList(@PathVariable("id") int id,
+                                                @RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {
         if (!auth(optionalHeader)) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
         SongList songList = songListService.getSonglistById(id);
-        //check if songlist is empty here?
-        if (songListService.getSonglistOwnerById(id).getUserId().equals(
+        if (songList == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        if (!songListService.getSonglistOwnerById(id).getUserId().equals(
                 userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)).getUserId())) {
-            return new ResponseEntity<>(songList, HttpStatus.OK);
-        } else {
             if (songList.getIsPrivate()) {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
             System.out.println(songListService.getSonglistOwnerById(id));
             System.out.println(userService.getUserByUserId(userService.getUsernameFromToken(optionalHeader)));
-            return new ResponseEntity<>(songList, HttpStatus.OK);
         }
+        return new ResponseEntity<>(songList, HttpStatus.OK);
     }
 
     //post
@@ -106,7 +106,8 @@ public class SongListController {
         Set<Song> checkList = s.getSongList();
         for (Song song : checkList) {
             Song compare = songService.getSongById(song.getId());
-            if (!(compare.getArtist().equals(song.getArtist()) &&
+            if (compare == null || song.getTitle() == null ||
+                    !(compare.getArtist().equals(song.getArtist()) &&
                     compare.getLabel().equals(song.getLabel()) &&
                     compare.getReleased() == song.getReleased() &&
                     compare.getTitle().equals(song.getTitle()))) {
