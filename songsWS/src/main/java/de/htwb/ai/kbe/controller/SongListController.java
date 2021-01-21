@@ -23,17 +23,14 @@ import javax.persistence.EntityNotFoundException;
 @RestController
 @RequestMapping(value = "/songLists")
 public class SongListController {
-<<<<<<< Updated upstream
 	//token secret noch seperat packen
 	//muss noch testen ob nur public methods geschickt werden bei get?userid=.. wenn noetig
-=======
     //Ausgabeformate für GET sind JSON und XML?? was da zu tun
     //die angelegte liste wegen songlists?
     //token secret noch seperat packen
     //post checkt noch nicht ob die songs vorhanden sind(gute und schlechte songs aufgabenstellung)
     //song endpoint kurz testen wegen auth header validierung
     //muss noch testen ob nur public methods geschickt werden bei get?userid=.. wenn noetig
->>>>>>> Stashed changes
     private final ISongListService songListService;
     private final IUserService userService;
     private final ISongService songService;
@@ -49,11 +46,7 @@ public class SongListController {
      * @param optionalHeader
      * @return returns public or private songlist based on if the requester owns the songlist
      */
-<<<<<<< Updated upstream
     @RequestMapping(params="userId",method = RequestMethod.GET,produces = {"application/json", "application/xml"})
-=======
-    @RequestMapping(params = "userId", method = RequestMethod.GET)
->>>>>>> Stashed changes
     public ResponseEntity<List<SongList>> getSongByParam(
             @RequestParam("userId") String userId,
             @RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {

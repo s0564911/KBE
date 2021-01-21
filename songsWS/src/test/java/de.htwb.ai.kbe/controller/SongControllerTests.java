@@ -34,11 +34,6 @@ public class SongControllerTests {
     private static String token;
     private static HttpHeaders headers;
 
-//    @Autowired
-//    IUserService iUserService;
-//    @Autowired
-//    ISongService iSongService;
-
     private static final int currentID = 2;
 
     // get all
@@ -55,7 +50,7 @@ public class SongControllerTests {
         UserService userService = new UserService(new UserDAO(sessionFactory));
 
         mockMvc = MockMvcBuilders.standaloneSetup(
-                new SongController(//iSongService, iUserService
+                new SongController(
                         new SongService(new SongDAO(sessionFactory)),
                         userService
                 )).build();
@@ -91,14 +86,14 @@ public class SongControllerTests {
         tx.commit();
     }
 
-//    @AfterClass
-//    public static void closeTransaction() {
-//        session.close();
-//    }
+    @AfterClass
+    public static void closeTransaction() {
+        session.close();
+    }
 
     @Test
     void getAllSongsShouldReturnOKAndOnePage() throws Exception {
-        mockMvc.perform(get("/songs/").headers(headers)).
+        mockMvc.perform(get("/songs/").accept("application/json").headers(headers)).
                 andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
 //                .andExpect(jsonPath("$.totalPages").value(1))
@@ -109,7 +104,7 @@ public class SongControllerTests {
 
     @Test
     void getSongShouldReturnOKAndJSONForExistingId() throws Exception {
-        mockMvc.perform(get("/songs/1"))
+        mockMvc.perform(get("/songs/1").headers(headers).accept("application/json"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(1))
@@ -121,7 +116,7 @@ public class SongControllerTests {
 
     @Test
     void getSongShouldReturn404ForNonExistingId() throws Exception {
-        mockMvc.perform(get("/songs/3000"))
+        mockMvc.perform(get("/songs/3000").headers(headers))
                 .andExpect(status().isNotFound());
     }
 
@@ -143,6 +138,7 @@ public class SongControllerTests {
         String content = mockMvc.perform(post("/songs/")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)
+                .headers(headers)
                 .headers(head))
                 .andExpect(status().is(201))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -152,14 +148,6 @@ public class SongControllerTests {
                 .andExpect(jsonPath("$.released").value(1988))
                 .andExpect(header().string("Location", "/rest/songs/"))
                 .andReturn().getResponse().getContentAsString();
-
-//        JSONParser parser = new JSONParser();
-//        JSONObject result = (JSONObject) parser.parse(content);
-//        int id = (int) result.getAsNumber("id");
-//        mockMvc.perform(delete("/songs/" + id))
-//                .andExpect(status().is(204))
-//        ;
-//        tx.commit();
     }
 
     @Test
@@ -174,54 +162,11 @@ public class SongControllerTests {
 
         mockMvc.perform(post("/songs/")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                .content(json)
+                .headers(headers))
                 .andExpect(status().is(400))
         ;
     }
-
-//    @Test
-//    void addSongShouldReturn415ForXML() throws Exception {
-//        String xml =
-//
-//                "<title>Dopeman (Remix)</title>\n" +
-//                        "<artist>N.W.A.</artist>\n" +
-//                        "<label>Ruthless</label>\n" +
-//                        "<released>1988</released>";
-//
-//        mockMvc.perform(post("/songs/")
-//                .contentType(MediaType.APPLICATION_ATOM_XML)
-//                .content(xml))
-//                .andExpect(status().is(415))
-//        ;
-//    }
-
-//    @Test
-//    void addSongShouldReturn415ForEmptyPayload() throws Exception {
-//        mockMvc.perform(post("/songs/"))
-//                .andExpect(status().is(415))
-//        ;
-//    }
-
-    // put ID
-
-//    @Test
-//    void updateSongShouldReturn204ForValidIDAndJSON() throws Exception {
-//        String json =
-//
-//                "{" +
-//                        "    \"id\": \"" + (currentID+2) + "\"," +
-//                        "    \"title\": \"I Aint tha 1\"," +
-//                        "    \"artist\": \"N.W.A.\"," +
-//                        "    \"label\": \"Ruthless\"," +
-//                        "    \"released\": 1988" +
-//                        "}";
-//
-//        mockMvc.perform(put("/songs/" + (currentID+2))
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(json))
-//                .andExpect(status().is(204))
-//        ;
-//    }
 
     @Test
     void updateSongShouldReturn400ForInvalidIDInPayload() throws Exception {
@@ -237,7 +182,8 @@ public class SongControllerTests {
 
         mockMvc.perform(put("/songs/" + 1)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                .content(json)
+                .headers(headers))
                 .andExpect(status().is(400))
         ;
     }
@@ -256,7 +202,8 @@ public class SongControllerTests {
 
         mockMvc.perform(put("/songs/3000")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                .content(json)
+                .headers(headers))
                 .andExpect(status().is(404))
         ;
     }
@@ -274,47 +221,24 @@ public class SongControllerTests {
 
         mockMvc.perform(put("/songs/" + currentID)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
+                .content(json)
+                .headers(headers))
                 .andExpect(status().is(400))
         ;
     }
-
-//    @Test
-//    void updateSongShouldReturn415ForXML() throws Exception {
-//        String xml =
-//
-//                "<id>11</id>\n" +
-//                        "<title>Dopeman (Remix)</title>\n" +
-//                        "<artist>N.W.A.</artist>\n" +
-//                        "<label>Ruthless</label>\n" +
-//                        "<released>1988</released>";
-//
-//        mockMvc.perform(put("/songs/" + currentID)
-//                .contentType(MediaType.APPLICATION_ATOM_XML)
-//                .content(xml))
-//                .andExpect(status().is(415))
-//        ;
-//    }
-
-//    @Test
-//    void updateSongShouldReturn415ForEmptyPayload() throws Exception {
-//        mockMvc.perform(put("/songs/" + currentID))
-//                .andExpect(status().is(415))
-//        ;
-//    }
 
 //     delete ID
 
     @Test
     void deleteSongShouldReturn204ForValidID() throws Exception {
-        mockMvc.perform(delete("/songs/" + currentID))
+        mockMvc.perform(delete("/songs/" + currentID).headers(headers))
                 .andExpect(status().is(204))
         ;
     }
 
     @Test
     void deleteSongShouldReturn400ForInvalidID() throws Exception {
-        mockMvc.perform(delete("/songs/3000"))
+        mockMvc.perform(delete("/songs/3000").headers(headers))
                 .andExpect(status().is(400))
         ;
     }
