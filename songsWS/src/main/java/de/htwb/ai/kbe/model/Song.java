@@ -1,11 +1,11 @@
 package de.htwb.ai.kbe.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity//(name = "songs")
 @Table(name="songs")
 public class Song {
-	
 
     @Id
     @Column(name="id")
@@ -18,7 +18,7 @@ public class Song {
                 + released + "]";
     }
 
-    @Column(name="title") private String title;
+    @Column(name="title") @NotNull private String title;
     @Column(name="artist") private String artist;
     @Column(name="label") private String label;
     @Column(name="released") private int released;

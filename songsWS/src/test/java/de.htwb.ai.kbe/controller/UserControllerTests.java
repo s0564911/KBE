@@ -1,16 +1,19 @@
 package de.htwb.ai.kbe.controller;
 
 import de.htwb.ai.kbe.dao.UserDAO;
+import de.htwb.ai.kbe.model.User;
 import de.htwb.ai.kbe.service.UserService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.*;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.event.annotation.BeforeTestClass;
+import org.springframework.test.context.event.annotation.BeforeTestExecution;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -18,32 +21,32 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 public class UserControllerTests {
-    private MockMvc mockMvc;
-    private Session session;
+    private static MockMvc mockMvc;
+    private static Session session;
 
-    @BeforeEach
-    public void setup() throws InterruptedException {
-        // enhance calm pls
-        Thread.sleep(500);
+    @BeforeAll
+    public static void setup() throws InterruptedException {
+
         SessionFactory sessionFactory = new MetadataSources(
                 new StandardServiceRegistryBuilder()
                         .configure()
                         .build()
         ).buildMetadata().buildSessionFactory();
 
-        mockMvc =
-                MockMvcBuilders.standaloneSetup(
+        mockMvc = MockMvcBuilders.standaloneSetup(
                         new UserController(
                                 new UserService(
                                         new UserDAO(sessionFactory)
                                 ))).build();
 
         session = sessionFactory.getCurrentSession();
-        Transaction tx = session.beginTransaction();
+        session.beginTransaction();
+
+        session.save(User.builder().withUserId("mmuster").withFirstname("Maxime").withLastname("Muster").withPassword("pass1234").build());
     }
 
-    @AfterEach
-    void closeTransaction(){
+    @AfterClass
+    public static void closeTransaction(){
         session.close();
     }
 

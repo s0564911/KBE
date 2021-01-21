@@ -2,7 +2,7 @@ package de.htwb.ai.kbe.model;
 
 import javax.persistence.*;
 
-@Entity//(name = "user")
+@Entity(name = "user")
 @Table(name="user")
 public class User {
 
@@ -13,7 +13,7 @@ public class User {
     
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="userId")
     private String userId;
 

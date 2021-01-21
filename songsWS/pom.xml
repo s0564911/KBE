@@ -27,7 +27,6 @@
         <tld.version>1.1.2</tld.version>
         <servlets.version>3.1.0</servlets.version>
         <jsp.version>2.3.1</jsp.version>
-        <hsqldb.version>1.8.0.10</hsqldb.version>
         <junit.version>5.7.0</junit.version>
     </properties>
     <dependencies>
@@ -103,6 +102,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.22</version>
         </dependency>
+
+        <!-- HyperSQL for Testing -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
 
         <!-- XML Binding -->
         <dependency>
@@ -212,6 +219,12 @@
 		    <version>0.11.2</version>
 		    <scope>runtime</scope>
 		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
     <build>

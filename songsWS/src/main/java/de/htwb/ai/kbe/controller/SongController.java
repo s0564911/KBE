@@ -6,6 +6,7 @@ import de.htwb.ai.kbe.service.ISongService;
 import de.htwb.ai.kbe.service.IUserService;
 
 //import org.graalvm.compiler.lir.LIRInstruction.Use;
+import de.htwb.ai.kbe.service.SongService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +28,7 @@ public class SongController {
         this.songService = songService;
         this.userService = userService;
     }
-    
-    
+
     //GET https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Song>> getAllSongs(
