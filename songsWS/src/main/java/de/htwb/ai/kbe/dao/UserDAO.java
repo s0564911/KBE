@@ -86,7 +86,7 @@ public class UserDAO implements IUserDAO {
     }
     /**
      * 
-     * @param jws
+     * @param token
      * @param user
      * @return boolean return true the user is the same as the one in the param token
      */

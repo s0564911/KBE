@@ -154,7 +154,6 @@ public class SongListController {
         return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
 
-
     //helper
     public boolean auth(String optionalHeader) {
         if (optionalHeader.equals("")) {

@@ -1,6 +1,5 @@
 package de.htwb.ai.kbe.controller;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
