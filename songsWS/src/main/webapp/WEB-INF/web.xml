@@ -23,6 +23,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>songsWS-KBE</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
+        <url-pattern>/songsWS-KBE/rest/*</url-pattern>
     </servlet-mapping>
 </web-app>
