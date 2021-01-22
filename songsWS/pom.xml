@@ -250,22 +250,22 @@
                 <version>3.0.0-M5</version>
                 <!--                <version>2.22.0</version>-->
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>pl.project13.maven</groupId>-->
-<!--                <artifactId>git-commit-id-plugin</artifactId>-->
-<!--                <version>4.0.2</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>revision</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>-->
-<!--                    &lt;!&ndash; more config here as you see fit &ndash;&gt;-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>4.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
+                    <!-- more config here as you see fit -->
+                </configuration>
+            </plugin>
             <plugin> <!-- git-info plugin -->
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
