@@ -3,16 +3,15 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans     
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
-        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx.xsd">
+        http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
     <!--  explicit support for annotation-driven MVC controllers 
          e.g., @RequestMapping, @Controller -->
@@ -26,36 +25,16 @@
 
     <!--    database connection source -->
     <bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <!--        <property name="driverClassName" value="org.postgresql.Driver"/>-->
-        <!--                <property name="url" value="jdbc:postgresql://ec2-54-211-238-131.compute-1.amazonaws.com:5432/d76lkavtcpn5if"/>-->
-        <!--                <property name="username" value="imozvxjfxsmluk"/>-->
-        <!--                <property name="password" value="5c1d80929fc678ecad7806373be3c24d4c7447ba76cd9b9cfdfa8d5a97f9949e"/>-->
-
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-
-<!--        <property name="url" value="jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_76b0255c9916e6e?reconnect=true"/>-->
-<!--        <property name="username" value="b28fbd86623d63"/>-->
-<!--        <property name="password" value="39dfa470"/>-->
-
         <property name="url" value="jdbc:mysql://kbe.canxccuxooti.eu-central-1.rds.amazonaws.com/kbe"/>
         <property name="username" value="b28fbd86623d63"/>
         <property name="password" value="39dfa470"/>
-
-<!--        <property name="url" value="jdbc:mysql://remotemysql.com/kLR2fLv8CS"/>-->
-<!--        <property name="username" value="kLR2fLv8CS"/>-->
-<!--        <property name="password" value="54m9hr7qQb"/>-->
-
-
-<!--        <property name="url" value="jdbc:mysql://aqx5w9yc5brambgl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ohe2ppwo29y0bg7o"/>-->
-<!--        <property name="username" value="agmcsm3i9q1tlrnj"/>-->
-<!--        <property name="password" value="pwdvvbf0chlm0gnc"/>-->
-
-        <!--        <property name="connectionProperties">-->
-<!--            <props>-->
-<!--                <prop key="socketTimeout">10</prop>-->
-<!--            </props>-->
-<!--        </property>-->
     </bean>
+
+<!--    <jdbc:embedded-database id="testDataSource">-->
+<!--        <jdbc:script location="classpath:sql/create-test-db.sql" />-->
+<!--        <jdbc:script location="classpath:sql/insert-test-data.sql" />-->
+<!--    </jdbc:embedded-database>-->
 
     <!--    hibernate session factory -->
     <bean id="sessionFactory"

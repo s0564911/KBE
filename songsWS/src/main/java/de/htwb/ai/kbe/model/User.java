@@ -2,7 +2,7 @@ package de.htwb.ai.kbe.model;
 
 import javax.persistence.*;
 
-@Entity//(name = "user")
+@Entity(name = "user")
 @Table(name="user")
 public class User {
 
@@ -10,9 +10,10 @@ public class User {
     public String toString() {
         return "User [userId=" + userId + ", firstname=" + firstName + ", lastname=" + lastName + "]";
     }
-
+    
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="userId")
     private String userId;
 
@@ -55,6 +56,8 @@ public class User {
     }
     
     public String getPassword() { return password; }
+    
+ 
 
     /**
      * Creates builder to build {@link User}.

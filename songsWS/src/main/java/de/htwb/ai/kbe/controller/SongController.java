@@ -3,6 +3,10 @@ package de.htwb.ai.kbe.controller;
 import java.util.List;
 
 import de.htwb.ai.kbe.service.ISongService;
+import de.htwb.ai.kbe.service.IUserService;
+
+//import org.graalvm.compiler.lir.LIRInstruction.Use;
+import de.htwb.ai.kbe.service.SongService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,18 +19,24 @@ import javax.persistence.EntityNotFoundException;
 @RestController
 @RequestMapping(value = "/songs")
 public class SongController {
-
+//	autowired?
     private final ISongService songService;
+    
+    private final IUserService userService;
 
-    public SongController(ISongService songService) {
+    public SongController(ISongService songService, IUserService userService) {
         this.songService = songService;
+        this.userService = userService;
     }
 
     //GET https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Song>> getAllSongs() {
+    public ResponseEntity<List<Song>> getAllSongs(
+    		@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader) {
+    	
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
+    	
         List<Song> songs = songService.getAllSongs();
-
         if (songs == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -35,7 +45,10 @@ public class SongController {
 
     //GET https://localhost:8443/songsWS-KBE/rest/songs/1
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Song> getSong(@PathVariable("id") int id) {
+    public ResponseEntity<Song> getSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @PathVariable("id") int id) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
+    	
         Song song = songService.getSongById(id);
         if (song == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -45,7 +58,9 @@ public class SongController {
 
     //POST https://localhost:8443/songsWS-KBE/rest/songs
     @RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Song> addSong(@RequestBody Song s) {
+    public ResponseEntity<Song> addSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @RequestBody Song s) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/rest/songs/");
@@ -66,8 +81,9 @@ public class SongController {
 
     //PUT https://localhost:8443/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Song> updateSong(@PathVariable("id") int id, @RequestBody Song s) {
-
+    public ResponseEntity<Song> updateSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @PathVariable("id") int id, @RequestBody Song s) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
 
         Song song = Song.builder()
                 .withTitle(s.getTitle())
@@ -88,7 +104,9 @@ public class SongController {
 
     //DELETE https://localhost:8443/songsWS-KBE/rest/songs/10
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Song> deleteSong(@PathVariable("id") int id) {
+    public ResponseEntity<Song> deleteSong(@RequestHeader(value = "Authorization", defaultValue = "") String optionalHeader,
+    @PathVariable("id") int id) {
+    	if (!auth(optionalHeader)) {return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);}
         try {
             songService.deleteSong(id);
         } catch (EntityNotFoundException e) {
@@ -96,6 +114,19 @@ public class SongController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    
+    
+    //helper
+    public boolean auth (String optionalHeader) {
+    	if (optionalHeader.equals("")) {
+    		return false;
+    	}
+    	else if (userService.validateJWT(optionalHeader)) {
+    		return true;
+    	}
+    	else {return false;}
+    }
+
 
 }
 
