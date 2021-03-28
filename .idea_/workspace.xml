@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ecccccb5-b5b4-44d3-b398-82de09f40821" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/controller/DataClientApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/controller/SongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/controller/SongListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataClient/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/java/de/htwb/ai/kbe/controller/UserClientApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/java/de/htwb/ai/kbe/dao/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/java/de/htwb/ai/kbe/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/java/de/htwb/ai/kbe/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/java/de/htwb/ai/kbe/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/webapp/WEB-INF/dataClient.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/test/java/de.htwb.ai.kbe/controller/UserControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/test/resources/logback-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserClient/src/test/resources/songs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-service/src/main/java/com/example/serviceregistrationanddiscoveryservice/DiscoveryServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-service/src/test/java/com/example/serviceregistrationanddiscoveryservice/ServiceRegistrationAndDiscoveryServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/TestClasses/htwb/ClassNoDefConstr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/TestClasses/htwb/ClassWithRunMes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/main/java/htwb/ai/RunMe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/main/java/htwb/ai/RunMeMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/EmptyTestClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/RunMeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/TestClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runmerunner/src/test/java/htwb/ai/TestClassPrivateConstructor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/controller/GitVersionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/controller/SongController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/controller/SongListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/dao/ISongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/dao/ISongDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/dao/ISongListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/dao/ISongListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/dao/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/dao/IUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/dao/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/dao/SongDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/dao/SongListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/dao/SongListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/dao/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/model/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/model/SongList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/model/SongList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/service/ISongListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/service/ISongListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/service/ISongService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/service/ISongService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserClient/src/main/java/de/htwb/ai/kbe/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/service/SongListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/service/SongListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/service/SongService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/service/SongService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/java/de/htwb/ai/kbe/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/java/de/htwb/ai/kbe/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/webapp/WEB-INF/songsWS-KBE-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/webapp/WEB-INF/dataClient.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/test/java/de.htwb.ai.kbe/controller/SongControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/test/java/de.htwb.ai.kbe/controller/SongControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/test/java/de.htwb.ai.kbe/controller/SongListControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/test/java/de.htwb.ai.kbe/controller/SongListControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/test/java/de.htwb.ai.kbe/controller/UserControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/test/java/de.htwb.ai.kbe/controller/UserControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/test/resources/logback-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/test/resources/logback-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsWS/src/test/resources/songs.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataClient/src/test/resources/songs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/scripts/getTester.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/scripts/postTester.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/scripts/putAndDeleteTester.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/src/main/java/htwb/ai/KBE/OurSong.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/src/main/java/htwb/ai/KBE/SongServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/src/main/resources/songs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/src/test/resources/git.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/songsservlet/src/test/resources/testSongs.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1pZ9Nco7JDWpqyHuVjXEVEjUFGJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\UserClient\src" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\UserClient\src\test" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\UserClient\src\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\DataClient\src\main\java\de\htwb\ai\kbe\service" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\DataClient\src\main\java\de\htwb\ai\kbe\model" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\DataClient\src\main\java\de\htwb\ai\kbe\dao" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\DataClient\src\main\java\de\htwb\ai\kbe\controller" />
+      <recent name="C:\Users\Seija\Uni\51_KompBas\GitHub2\KBE\DataClient\src\test\java\de.htwb.ai.kbe\controller" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DiscoveryServiceApplication">
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="DataClient" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="DataClient" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="DataClient" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="de.htwb.ai.kbe.controller.DataClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.serviceregistrationanddiscoveryservice.DiscoveryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="C:/Uni/44_Scala/Beleg1/ExerciseListsBeleg" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg1/ExerciseListsBelegDONE" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg1/ExerciseListsBelegPLAIN/ExerciseListsBelegPLAIN" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg2/Beleg2Aufgabe" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Beleg3/Assignment3" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/Uebung1_Muster" value="PREVIEW" />
+        <entry key="C:/Uni/44_Scala/scala-naive-bayes-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../54_ContMan/Beleg1/AufgabeLogAnalyse" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../54_ContMan/Beleg1/BelegLogAnalyseAufgabe" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../54_ContMan/Beleg2/Beleg2_Aufgabe" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecccccb5-b5b4-44d3-b398-82de09f40821" name="Default Changelist" comment="" />
+      <created>1615379707034</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615379707034</updated>
+      <workItem from="1615379709069" duration="911000" />
+      <workItem from="1615380641371" duration="902000" />
+      <workItem from="1615387647306" duration="41000" />
+      <workItem from="1615387729355" duration="2869000" />
+      <workItem from="1615391499188" duration="386000" />
+      <workItem from="1615392340435" duration="98000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="873" y="364" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615380745749">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="873" y="364" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1100.2182.1536.827/0.0.2560.1409/-1050.502.1050.1650@0.0.2560.1409" timestamp="1615380745749" />
+    <state x="1011" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615391605476">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="1011" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1100.2182.1536.827/0.0.2560.1409/-1050.502.1050.1650@0.0.2560.1409" timestamp="1615391605476" />
+    <state x="731" y="285" key="new project wizard" timestamp="1615389559475">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="731" y="285" key="new project wizard/-1100.2182.1536.827/0.0.2560.1409/-1050.502.1050.1650@0.0.2560.1409" timestamp="1615389559475" />
+    <state x="1023" y="316" key="refactoring.ChangeSignatureDialog" timestamp="1615391714022">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="1023" y="316" key="refactoring.ChangeSignatureDialog/-1100.2182.1536.827/0.0.2560.1409/-1050.502.1050.1650@0.0.2560.1409" timestamp="1615391714022" />
+  </component>
+</project>
