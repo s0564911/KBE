@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-
+    <groupId>de.htwb.ai.kbe</groupId>
     <artifactId>gatewayService</artifactId>
     <version>1.0.0</version>
     <name>gatewayService</name>
