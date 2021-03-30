@@ -64,4 +64,28 @@ public class AuthController {
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String isValidToken(@RequestHeader(value = "Authorization", defaultValue = "") String token) {
+        try {
+
+            String private_key = "oeRaYY7Wo24sDqKSX3IM9ASGmdGPmkTd9jo1QTy4b7P9Ze5_9hKo"; // should be saved elsewhere
+            byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(private_key);
+            Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
+
+            Jws<Claims> claims = Jwts.parserBuilder()
+                    .setSigningKey(signingKey)
+                    .build()
+                    .parseClaimsJws(token);
+            String user = (String) claims.getBody().get("user");
+            String pass = (String) claims.getBody().get("password");
+            if (userRepository.findByUserId(user).get(0).getPassword().equals(pass))
+                return user;
+            else
+                return null;
+        } catch (JwtException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
